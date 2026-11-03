@@ -1,0 +1,150 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-form__tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contact-form__tab {
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-text);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-form__tab.is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #0F172A;
+}
+
+.contact-form__tab-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    background: color-mix(in srgb, var(--color-card) 92%, transparent);
+}
+
+.contact-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-md);
+}
+
+.contact-form .input-wrapper {
+    margin-bottom: 0;
+    /* Remove a margem extra do componente Input */
+}
+
+.contact-form .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.contact-form .cancel-button,
+.contact-form .save-button {
+    padding: var(--spacing-lg) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+}
+
+.contact-form .cancel-button {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+}
+
+.contact-form .save-button {
+    background-color: var(--color-primary);
+    color: #0F172A;
+}
+
+.contact-form__hint {
+    display: block;
+    margin-top: 6px;
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.contact-form__tag-suggestions {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background: var(--color-card);
+    overflow: hidden;
+}
+
+.contact-form__tag-suggestions .tag-item {
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: background-color 0.2s ease;
+}
+
+.contact-form__tag-suggestions .tag-item:hover {
+    background: color-mix(in srgb, var(--color-primary) 12%, var(--color-card));
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.contact-form__selected-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-primary) 16%, var(--color-card));
+    border: 1px solid color-mix(in srgb, var(--color-primary) 36%, var(--color-border));
+    color: var(--color-text);
+    font-size: 0.88rem;
+}
+
+.contact-form__remove-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-form__remove-tag:hover {
+    background: rgba(15, 23, 42, 0.08);
+    color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+    .contact-form__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form__tab {
+        flex: 1 1 calc(50% - 5px);
+        text-align: center;
+    }
+}

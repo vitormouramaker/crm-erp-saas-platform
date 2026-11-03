@@ -1,0 +1,35 @@
+.rh-private {
+  padding: 24px;
+}
+
+.rh-private__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rh-private__card h1 {
+  margin: 0 0 8px;
+}
+
+.rh-private__card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-private__links {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.rh-private__links a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+

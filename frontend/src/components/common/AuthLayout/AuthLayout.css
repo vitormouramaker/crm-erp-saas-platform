@@ -1,0 +1,84 @@
+.auth-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-surface);
+}
+
+.auth-form-section {
+    flex: 3;
+    /* Proporção menor para o formulário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    /* Largura máxima do conteúdo do formulário */
+}
+
+.auth-image-section {
+    flex: 5;
+    /* Proporção maior para a imagem */
+    background-image: linear-gradient(135deg, #141414 0%, #2b2f12 60%, #C5D200 140%);
+    /* Imagem de placeholder */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Para Tablets - a partir de 992px para baixo */                       
+@media (max-width: 992px) {
+    .auth-layout {
+        flex-direction: column;
+        /* Empilha os itens verticalmente */
+    }
+
+    .auth-form-section {
+        flex: 1;
+        /* Ocupa o espaço disponível */
+        padding: var(--spacing-lg);
+    }
+
+    .auth-image-section {
+        flex: 1;
+        min-height: 300px;
+        /* Garante uma altura mínima para a imagem */
+    }
+}
+
+/* Para Celulares - a partir de 768px para baixo */
+@media (max-width: 768px) {
+    .auth-image-section {
+        display: none;
+        /* Esconde a imagem para focar 100% no formulário */
+    }
+
+    .auth-form-section {
+        /* Centraliza o formulário na tela inteira */
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .auth-form-section::before {
+        content: "";
+        align-self: flex-start;
+        width: 180px;
+        height: 48px;
+        margin-bottom: var(--spacing-lg);
+        background-image: url('/logo-wide.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+    }
+    .form-container {
+        /* Remove a largura máxima para se adaptar melhor a telas pequenas */
+        max-width: none;
+        padding: var(--spacing-md);
+    }
+}
+
+

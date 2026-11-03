@@ -1,0 +1,108 @@
+.branch-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.branch-form-location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-md);
+}
+
+.branch-form-location-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.location-helper-button,
+.location-helper-link {
+    border-radius: var(--border-radius-md);
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.location-helper-button {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.location-helper-link {
+    background-color: var(--color-primary);
+    color: #0F172A;
+    text-decoration: none;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.checkbox-wrapper label {
+    cursor: pointer;
+    position: relative;
+    color: var(--color-text-secondary);
+}
+
+.checkbox-wrapper input:disabled+label {
+    cursor: not-allowed;
+}
+
+.checkbox-wrapper .tooltip {
+    display: none;
+    position: absolute;
+    left: 105%;
+    top: -5px;
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.checkbox-wrapper input:disabled+label:hover .tooltip {
+    display: inline-block;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.cancel-button,
+.save-button {
+    padding: var(--spacing-lg) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+}
+
+.cancel-button {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+}
+
+.save-button {
+    background-color: var(--color-primary);
+    color: #0F172A;
+}
+
+.branch-form .input-field:disabled {
+    background-color: var(--color-background);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+    .branch-form-location-grid {
+        grid-template-columns: 1fr;
+    }
+}

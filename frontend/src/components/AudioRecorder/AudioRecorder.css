@@ -1,0 +1,269 @@
+.audio-recorder {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.recording-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.pulse-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #d32f2f;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.waveform {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+}
+
+.waveform-bars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 40px;
+}
+
+.waveform-bars .bar {
+    width: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+.waveform-bars .bar:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.waveform-bars .bar:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 10px;
+    }
+
+    50% {
+        height: 30px;
+    }
+}
+
+.duration {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.control-btn.cancel {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.control-btn.cancel:hover {
+    background-color: #c62828;
+}
+
+.control-btn.pause {
+    background-color: #f57c00;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.control-btn.pause:hover {
+    background-color: #ef6c00;
+}
+
+.control-btn.stop {
+    background-color: var(--color-primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.control-btn.stop:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.control-btn.send {
+    background-color: #388e3c;
+    color: white;
+}
+
+.control-btn.send:hover {
+    background-color: #2e7d32;
+}
+
+.audio-preview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-md);
+}
+
+.audio-preview p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.audio-preview audio {
+    width: 100%;
+}
+
+/* Estilos melhorados para tela de erro */
+.audio-recorder-error {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.audio-recorder-error .error-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.audio-recorder-error .error-message {
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.audio-recorder-error .error-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+.audio-recorder-error .error-close-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-md);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.audio-recorder-error .error-close-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.audio-recorder-error .error-help {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-md);
+    text-align: left;
+}
+
+.audio-recorder-error .error-help-title {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.audio-recorder-error .error-help ul {
+    list-style: disc;
+    padding-left: var(--spacing-lg);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.audio-recorder-error .error-help li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px) {
+    .audio-recorder {
+        padding: var(--spacing-md);
+    }
+
+    .control-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .control-btn.pause,
+    .control-btn.stop {
+        width: 45px;
+        height: 45px;
+    }
+
+    .waveform {
+        min-height: 50px;
+    }
+
+    .waveform-bars {
+        height: 35px;
+    }
+}

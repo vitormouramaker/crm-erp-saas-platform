@@ -1,0 +1,255 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { ActivityIndicator, Alert, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+
+import { TagFormModal } from '@/components/TagFormModal';
+import { cardSurface, type ThemeColors } from '@/constants/theme/tokens';
+import { useTheme } from '@/store/themeStore';
+import { ClienteTag, deletarTag, getTags } from '@/services/clientesApi';
+import { canManageTags } from '@/services/permissions';
+import { useAuth } from '@/store/authStore';
+
+export default function TagsScreen() {
+  const { colors, scheme } = useTheme();
+  const styles = useMemo(() => createStyles(colors, scheme), [colors, scheme]);
+  const { user } = useAuth();
+  const [tags, setTags] = useState<ClienteTag[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [error, setError] = useState('');
+  const [formVisible, setFormVisible] = useState(false);
+  const [editing, setEditing] = useState<ClienteTag | null>(null);
+
+  const allowed = !!user && canManageTags(user);
+
+  const load = useCallback(async () => {
+    if (!user || !allowed) return;
+    setError('');
+    try {
+      const data = await getTags(user);
+      setTags(data);
+    } catch (err: any) {
+      setError(err?.message || 'Não foi possível carregar as tags.');
+    }
+  }, [user, allowed]);
+
+  useEffect(() => {
+    setLoading(true);
+    load().finally(() => setLoading(false));
+  }, [load]);
+
+  async function handleRefresh() {
+    setRefreshing(true);
+    await load();
+    setRefreshing(false);
+  }
+
+  function openCreate() {
+    setEditing(null);
+    setFormVisible(true);
+  }
+
+  function openEdit(tag: ClienteTag) {
+    setEditing(tag);
+    setFormVisible(true);
+  }
+
+  function confirmDelete(tag: ClienteTag) {
+    Alert.alert(
+      'Remover tag',
+      `Tem certeza que deseja remover "${tag.name}"? Ela será desvinculada de todos os contatos.`,
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Remover',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await deletarTag(tag.id);
+              await load();
+            } catch (err: any) {
+              Alert.alert('Erro', err?.message || 'Não foi possível remover a tag.');
+            }
+          },
+        },
+      ]
+    );
+  }
+
+  async function handleSaved() {
+    setFormVisible(false);
+    setEditing(null);
+    await load();
+  }
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.header}>
+        <Pressable onPress={() => router.back()} hitSlop={10} style={styles.backButton}>
+          <Ionicons name="arrow-back" size={22} color={colors.textPrimary} />
+        </Pressable>
+        <Text style={styles.title}>Gerenciar Tags</Text>
+      </View>
+
+      {!allowed ? (
+        <View style={styles.centered}>
+          <Text style={styles.subtitle}>Você não tem permissão para gerenciar tags.</Text>
+        </View>
+      ) : loading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator color={colors.muted} />
+        </View>
+      ) : error ? (
+        <View style={styles.centered}>
+          <Text style={styles.subtitle}>{error}</Text>
+        </View>
+      ) : (
+        <ScrollView
+          contentContainerStyle={styles.content}
+          refreshControl={<RefreshControl refreshing={refreshing} onRefresh={handleRefresh} tintColor={colors.muted} />}
+        >
+          <Pressable style={styles.newButton} onPress={openCreate}>
+            <Ionicons name="add-circle-outline" size={16} color="#141414" />
+            <Text style={styles.newButtonText}>Nova Tag</Text>
+          </Pressable>
+
+          <View style={styles.list}>
+            {tags.map((tag) => (
+              <View key={tag.id} style={styles.card}>
+                <View style={styles.pill}>
+                  <Text style={styles.pillText}>{tag.name}</Text>
+                </View>
+                <View style={styles.cardActions}>
+                  <Pressable style={styles.actionButton} onPress={() => openEdit(tag)} hitSlop={6}>
+                    <Ionicons name="create-outline" size={16} color={colors.textPrimary} />
+                  </Pressable>
+                  <Pressable style={styles.actionButton} onPress={() => confirmDelete(tag)} hitSlop={6}>
+                    <Ionicons name="trash-outline" size={16} color={colors.textPrimary} />
+                  </Pressable>
+                </View>
+              </View>
+            ))}
+
+            {tags.length === 0 && (
+              <View style={styles.centered}>
+                <Text style={styles.subtitle}>Nenhuma tag cadastrada.</Text>
+              </View>
+            )}
+          </View>
+        </ScrollView>
+      )}
+
+      {user && (
+        <TagFormModal
+          visible={formVisible}
+          authUser={user}
+          editing={editing}
+          onClose={() => {
+            setFormVisible(false);
+            setEditing(null);
+          }}
+          onSaved={handleSaved}
+        />
+      )}
+    </SafeAreaView>
+  );
+}
+
+const createStyles = (colors: ThemeColors, scheme: 'light' | 'dark') =>
+  StyleSheet.create({
+    safeArea: {
+      flex: 1,
+      backgroundColor: colors.background,
+    },
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 16,
+      paddingHorizontal: 24,
+      paddingTop: 12,
+      paddingBottom: 20,
+    },
+    backButton: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    title: {
+      fontSize: 22,
+      fontWeight: '700',
+      color: colors.textPrimary,
+    },
+    content: {
+      paddingHorizontal: 24,
+      paddingBottom: 24,
+    },
+    centered: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      paddingHorizontal: 24,
+      paddingVertical: 32,
+    },
+    subtitle: {
+      fontSize: 14,
+      color: colors.muted,
+      textAlign: 'center',
+    },
+    newButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      height: 46,
+      borderRadius: 12,
+      backgroundColor: colors.accent,
+      marginBottom: 20,
+    },
+    newButtonText: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: '#141414',
+    },
+    list: {
+      gap: 12,
+    },
+    card: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      borderRadius: 14,
+      paddingHorizontal: 14,
+      paddingVertical: 12,
+      ...cardSurface(colors, scheme),
+    },
+    pill: {
+      borderWidth: 1,
+      borderColor: colors.border,
+      borderRadius: 999,
+      paddingHorizontal: 14,
+      paddingVertical: 6,
+    },
+    pillText: {
+      fontSize: 13,
+      fontWeight: '700',
+      color: colors.textPrimary,
+    },
+    cardActions: {
+      flexDirection: 'row',
+      gap: 8,
+    },
+    actionButton: {
+      width: 34,
+      height: 34,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });

@@ -1,0 +1,26 @@
+diff --git a/node_modules/expo-audio/ios/AudioModule.swift b/node_modules/expo-audio/ios/AudioModule.swift
+index 938f985..b686b06 100644
+--- a/node_modules/expo-audio/ios/AudioModule.swift
++++ b/node_modules/expo-audio/ios/AudioModule.swift
+@@ -145,7 +145,7 @@ public class AudioModule: Module {
+       }
+ 
+       Property("duration") { player in
+-        player.ref.status == .readyToPlay ? player.duration : 0.0
++        player.ref.currentItem?.status == .readyToPlay ? player.duration : 0.0
+       }
+ 
+       Property("playbackRate") { player in
+diff --git a/node_modules/expo-audio/ios/AudioPlayer.swift b/node_modules/expo-audio/ios/AudioPlayer.swift
+index 1dbce09..de0c93d 100644
+--- a/node_modules/expo-audio/ios/AudioPlayer.swift
++++ b/node_modules/expo-audio/ios/AudioPlayer.swift
+@@ -88,7 +88,7 @@ public class AudioPlayer: SharedRef<AVPlayer> {
+   }
+ 
+   func currentStatus() -> [String: Any] {
+-    let currentDuration = ref.status == .readyToPlay ? duration : 0.0
++    let currentDuration = ref.currentItem?.status == .readyToPlay ? duration : 0.0
+     let rate = isPlaying ? ref.rate : currentRate
+     return [
+       "id": id,

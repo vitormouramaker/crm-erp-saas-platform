@@ -1,0 +1,117 @@
+.login-form {
+    width: 100%;
+}
+
+.login-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.login-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.login-header p {
+    color: var(--color-text-secondary);
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+}
+
+.login-password-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+}
+
+.login-password-field label {
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.login-password-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-input-background);
+}
+
+.login-password-input:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-focus-ring);
+}
+
+.login-password-input .input-field {
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.login-password-input .input-field:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.login-password-toggle {
+    flex: 0 0 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    border-radius: var(--border-radius-sm);
+}
+
+.login-password-toggle:hover,
+.login-password-toggle:focus-visible {
+    outline: none;
+    color: var(--color-text-primary);
+    background: var(--color-hover-surface);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.remember-me label {
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.forgot-password-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: var(--color-primary-hover);
+}

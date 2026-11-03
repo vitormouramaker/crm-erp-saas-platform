@@ -1,0 +1,349 @@
+.rh-holidays {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.rh-holidays--embedded {
+  padding: 0;
+  gap: 0;
+}
+
+.rh-holidays-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rh-holidays-wrapper--embedded {
+  padding: 20px;
+}
+
+.rh-holidays__hero,
+.rh-holidays__filters,
+.rh-holidays__create,
+.rh-holidays__table {
+  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rh-holidays__hero {
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rh-holidays__hero h1 {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.rh-holidays__hero p {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-holidays__action {
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  padding: 12px 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: #111827;
+  white-space: nowrap;
+}
+
+.rh-holidays__filters {
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  gap: 14px;
+  border: none;
+  border-radius: 0;
+  align-items: end;
+}
+
+.rh-holidays__create {
+  padding: 22px;
+}
+
+.rh-holidays__create--action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rh-holidays__create h2 {
+  margin: 0 0 14px;
+  color: #0f172a;
+}
+
+.rh-holidays__create--action h2 {
+  margin-bottom: 6px;
+}
+
+.rh-holidays__create--action p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-holidays__create-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+.rh-holidays__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rh-holidays__field label {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.rh-holidays__field input {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.rh-holidays__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.rh-holidays__toggle {
+  display: flex;
+  align-items: center;
+  height: 44px;
+}
+
+.rh-holidays__toggle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.rh-holidays__primary {
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  min-width: 140px;
+  min-height: 42px;
+  padding: 10px 14px;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rh-holidays__secondary {
+  border: 1px solid #ced9e8;
+  border-radius: var(--border-radius-md);
+  min-width: 140px;
+  min-height: 42px;
+  padding: 10px 14px;
+  font-weight: 600;
+  background: #fff;
+  color: #24354f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rh-holidays__message {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-holidays__table {
+  padding: 22px;
+}
+
+.rh-holidays__table-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rh-holidays__table-header h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.rh-holidays__table-header span {
+  color: var(--color-text-secondary);
+  font-weight: 700;
+}
+
+.rh-holidays__empty {
+  padding: 14px 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-holidays__table-wrapper {
+  overflow: auto;
+}
+
+.rh-holidays__gridtable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rh-holidays__gridtable th,
+.rh-holidays__gridtable td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.95rem;
+}
+
+.rh-holidays__gridtable th {
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.rh-holidays__row-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.rh-holidays__row-actions button {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff;
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rh-holidays__modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.rh-holidays__modal-actions button {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff;
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  font-weight: 900;
+}
+
+.rh-holidays__modal-actions .rh-holidays__primary {
+  margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+  .rh-holidays__create-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-holidays__filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rh-holidays {
+    padding: 16px;
+  }
+
+  .rh-holidays--embedded {
+    padding: 0;
+    gap: 0;
+  }
+
+  .rh-holidays-wrapper--embedded {
+    padding: 16px;
+  }
+
+  .rh-holidays__hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rh-holidays__action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rh-holidays__create--action {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rh-holidays__actions {
+    flex-direction: column;
+  }
+
+  .rh-holidays__actions .rh-holidays__primary,
+  .rh-holidays__actions .rh-holidays__secondary,
+  .rh-holidays__create--action .rh-holidays__primary {
+    width: 100%;
+  }
+}
+
+:root[data-theme="dark"] .rh-holidays__hero,
+:root[data-theme="dark"] .rh-holidays__filters,
+:root[data-theme="dark"] .rh-holidays__create,
+:root[data-theme="dark"] .rh-holidays__table {
+  border-color: var(--color-border);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] .rh-holidays__create h2,
+:root[data-theme="dark"] .rh-holidays__field label,
+:root[data-theme="dark"] .rh-holidays__toggle label,
+:root[data-theme="dark"] .rh-holidays__table-header h2,
+:root[data-theme="dark"] .rh-holidays__gridtable th,
+:root[data-theme="dark"] .rh-holidays__gridtable td,
+:root[data-theme="dark"] .rh-holidays__row-actions button,
+:root[data-theme="dark"] .rh-holidays__modal-actions button {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .rh-holidays__field input,
+:root[data-theme="dark"] .rh-holidays__secondary,
+:root[data-theme="dark"] .rh-holidays__row-actions button,
+:root[data-theme="dark"] .rh-holidays__modal-actions button {
+  background: var(--color-input-background);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .rh-holidays__gridtable th,
+:root[data-theme="dark"] .rh-holidays__gridtable td {
+  border-color: var(--color-border);
+}
+

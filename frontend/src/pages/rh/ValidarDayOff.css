@@ -1,0 +1,539 @@
+.rh-dayoff {
+  display: flex;
+  flex-direction: column;
+}
+
+.rh-dayoff-wrapper {
+  padding: 20px;
+}
+
+.rh-dayoff__filters {
+  background: var(--color-surface);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rh-dayoff__hero,
+.rh-dayoff__summary,
+.rh-dayoff__card,
+.rh-dayoff__manage,
+.rh-dayoff__schedule,
+.rh-dayoff__history {
+  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rh-dayoff__hero,
+.rh-dayoff__filters,
+.rh-dayoff__manage,
+.rh-dayoff__schedule,
+.rh-dayoff__history {
+  padding: 22px;
+}
+
+.rh-dayoff__hero h2,
+.rh-dayoff__schedule h4 {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.rh-dayoff__hero p,
+.rh-dayoff__message {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-dayoff__filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 280px) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.rh-dayoff__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rh-dayoff__field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.rh-dayoff__field select,
+.rh-dayoff__field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.rh-dayoff__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rh-dayoff__button {
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  padding: 12px 16px;
+  font-weight: 700;
+}
+
+.rh-dayoff__button--primary {
+  background: var(--color-primary);
+  color: #111827;
+}
+
+.rh-dayoff__button--danger {
+  background: #fee2e2;
+  border-color: rgba(220, 38, 38, 0.22);
+  color: #991b1b;
+}
+
+.rh-dayoff__button--inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rh-dayoff__result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rh-dayoff__overview {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(0, 2fr);
+  margin-top: 12px;
+  gap: 16px;
+  align-items: start;
+}
+
+.rh-dayoff__manage-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.rh-dayoff__manage-overview .rh-dayoff__manage {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  height: 100%;
+}
+
+.rh-dayoff__manage--action {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rh-dayoff__manage-overview .rh-dayoff__schedule {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  height: 100%;
+}
+
+.rh-dayoff__manage-overview > .rh-dayoff__manage:only-child {
+  grid-column: 1 / -1;
+  grid-row: auto;
+}
+
+.rh-dayoff__summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
+}
+
+.rh-dayoff__summary--success {
+  border-color: rgba(22, 163, 74, 0.18);
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.rh-dayoff__summary--warning {
+  border-color: rgba(245, 158, 11, 0.22);
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.rh-dayoff__summary-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.rh-dayoff__summary h3,
+.rh-dayoff__card h4 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.rh-dayoff__summary p,
+.rh-dayoff__summary span,
+.rh-dayoff__card span {
+  color: var(--color-text-secondary);
+}
+
+.rh-dayoff__summary p {
+  margin: 4px 0;
+}
+
+.rh-dayoff__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  align-content: start;
+  min-width: 0;
+}
+
+.rh-dayoff__card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rh-dayoff__grid > .rh-dayoff__schedule,
+.rh-dayoff__grid > .rh-dayoff__summary {
+  grid-column: 1 / -1;
+}
+
+.rh-dayoff__card p {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.rh-dayoff__manage-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rh-dayoff__manage-header h4 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.rh-dayoff__manage-header p {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-dayoff__manage-badge {
+  padding: 6px 12px;
+  border-radius: var(--border-radius-md);
+  background: rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.rh-dayoff__manage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.rh-dayoff__manage-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rh-dayoff__manage-field--full {
+  grid-column: 1 / -1;
+}
+
+.rh-dayoff__manage-field label {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+.rh-dayoff__manage-field input,
+.rh-dayoff__manage-field select,
+.rh-dayoff__manage-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.rh-dayoff__manage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.rh-dayoff__modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rh-dayoff__schedule-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.rh-dayoff__schedule-item {
+  padding: 14px;
+  border-radius: var(--border-radius-md);
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rh-dayoff__schedule-item strong {
+  color: #0f172a;
+}
+
+.rh-dayoff__schedule-item span {
+  color: var(--color-text-secondary);
+}
+
+
+.rh-dayoff__history-header h4 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.rh-dayoff__history {
+  min-width: 0;
+  height: 100%;
+}
+
+.rh-dayoff__history-header p {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-dayoff__history-filters {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.rh-dayoff__history-table-wrapper {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.rh-dayoff__history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rh-dayoff__history-table th,
+.rh-dayoff__history-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.rh-dayoff__history-table th {
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.rh-dayoff__history-table td {
+  color: #0f172a;
+}
+
+.rh-dayoff__status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.rh-dayoff__status-badge--approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.rh-dayoff__status-badge--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.rh-dayoff__status-badge--rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.rh-dayoff__history-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: var(--border-radius-md);
+  background: #fff;
+  color: #0f172a;
+  padding: 8px 12px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.rh-dayoff__empty {
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: var(--border-radius-md);
+  background: #f8fafc;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1100px) {
+  .rh-dayoff__filters,
+  .rh-dayoff__grid,
+  .rh-dayoff__manage-grid,
+  .rh-dayoff__history-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-dayoff__overview {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-dayoff__overview .rh-dayoff__summary,
+  .rh-dayoff__overview .rh-dayoff__grid {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .rh-dayoff__manage-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-dayoff__manage-overview .rh-dayoff__manage,
+  .rh-dayoff__manage-overview .rh-dayoff__schedule {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .rh-dayoff__actions {
+    justify-content: stretch;
+  }
+
+  .rh-dayoff__button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .rh-dayoff {
+    padding: 16px;
+  }
+
+  .rh-dayoff__hero,
+  .rh-dayoff__filters,
+  .rh-dayoff__summary,
+  .rh-dayoff__schedule,
+  .rh-dayoff__history {
+    padding: 18px;
+    border-radius: var(--border-radius-md);
+  }
+
+  .rh-dayoff__summary {
+    flex-direction: column;
+  }
+}
+
+:root[data-theme="dark"] .rh-dayoff__hero,
+:root[data-theme="dark"] .rh-dayoff__summary,
+:root[data-theme="dark"] .rh-dayoff__card,
+:root[data-theme="dark"] .rh-dayoff__manage,
+:root[data-theme="dark"] .rh-dayoff__schedule,
+:root[data-theme="dark"] .rh-dayoff__history,
+:root[data-theme="dark"] .rh-dayoff__filters {
+  border-color: var(--color-border);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] .rh-dayoff__field label,
+:root[data-theme="dark"] .rh-dayoff__summary h3,
+:root[data-theme="dark"] .rh-dayoff__card h4,
+:root[data-theme="dark"] .rh-dayoff__card p,
+:root[data-theme="dark"] .rh-dayoff__manage-header h4,
+:root[data-theme="dark"] .rh-dayoff__manage-badge,
+:root[data-theme="dark"] .rh-dayoff__manage-field label,
+:root[data-theme="dark"] .rh-dayoff__schedule-item strong,
+:root[data-theme="dark"] .rh-dayoff__history-header h4,
+:root[data-theme="dark"] .rh-dayoff__history-table td,
+:root[data-theme="dark"] .rh-dayoff__history-action {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .rh-dayoff__field select,
+:root[data-theme="dark"] .rh-dayoff__field input,
+:root[data-theme="dark"] .rh-dayoff__manage-field input,
+:root[data-theme="dark"] .rh-dayoff__manage-field select,
+:root[data-theme="dark"] .rh-dayoff__manage-field textarea,
+:root[data-theme="dark"] .rh-dayoff__history-action {
+  background: var(--color-input-background);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .rh-dayoff__summary--success {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.16) 0%, #151515 100%);
+  border-color: rgba(34, 197, 94, 0.24);
+}
+
+:root[data-theme="dark"] .rh-dayoff__summary--warning {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.16) 0%, #151515 100%);
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+:root[data-theme="dark"] .rh-dayoff__summary-icon,
+:root[data-theme="dark"] .rh-dayoff__manage-badge {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="dark"] .rh-dayoff__schedule-item,
+:root[data-theme="dark"] .rh-dayoff__empty {
+  background: #1c1c1c;
+}
+
+:root[data-theme="dark"] .rh-dayoff__history-table th,
+:root[data-theme="dark"] .rh-dayoff__history-table td {
+  border-color: var(--color-border);
+}
+

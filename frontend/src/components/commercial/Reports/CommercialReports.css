@@ -1,0 +1,465 @@
+.reports-page {
+  padding: 24px;
+  padding-bottom: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  background-color: var(--bg-body, #f7fafc);
+}
+
+.reports-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reports-header-row h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.filters-bar {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #cbd5e0;
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7fafc;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.date-inputs input {
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  padding: 4px;
+}
+
+.select-wrapper,
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7fafc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  min-width: 200px;
+  height: 38px;
+}
+
+.select-wrapper svg {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.select-wrapper select,
+.search-wrapper input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.search-flex {
+  flex: 1;
+}
+
+.reports-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.chart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #cbd5e0;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chart-header button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.chart-header button:hover {
+  background: var(--bg-hover);
+}
+
+.table-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+}
+
+.loss-report-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.loss-report-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.loss-report-summary__card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loss-report-summary__card span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.loss-report-summary__card strong {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.loss-report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 24px 24px;
+}
+
+.loss-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.loss-ranking__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.loss-ranking__row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.loss-ranking__row div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loss-ranking__row span {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.loss-ranking__empty {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.table-header-row {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header-row h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.table-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.status-select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.btn-export-sm {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-export-sm:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.reports-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reports-export-select {
+  min-width: 220px;
+}
+
+.reports-header-export {
+  white-space: nowrap;
+}
+
+.reports-table-wrapper {
+  overflow-x: auto;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reports-table th {
+  text-align: left;
+  padding: 12px 24px;
+  background-color: #edf2f7;
+  border-bottom: 2px solid #cbd5e0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-transform: uppercase;
+}
+
+.reports-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: white;
+}
+
+.reports-table tbody tr:nth-child(even) td {
+  background-color: #f7fafc;
+}
+
+.reports-table tbody tr:hover td {
+  background-color: #edf2f7;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-won {
+  background-color: #f0fff4;
+  color: #2f855a;
+}
+
+.status-lost {
+  background-color: #fff5f5;
+  color: #c53030;
+}
+
+.status-active {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+}
+
+.reports-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--text-secondary);
+}
+
+
+/* ===== DARK MODE ===== */
+:root[data-theme="dark"] .reports-page {
+    background-color: var(--color-background);
+}
+
+:root[data-theme="dark"] .filters-bar {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .date-inputs,
+:root[data-theme="dark"] .select-wrapper,
+:root[data-theme="dark"] .search-wrapper {
+    background: var(--color-elevated);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .select-wrapper select,
+:root[data-theme="dark"] .search-wrapper input,
+:root[data-theme="dark"] .date-inputs input {
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .chart-container {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .table-section {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .loss-report-section {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .loss-report-summary {
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .loss-report-summary__card {
+    background: var(--color-elevated);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .loss-ranking__row {
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .loss-report-summary__card span,
+:root[data-theme="dark"] .loss-ranking__row span,
+:root[data-theme="dark"] .loss-ranking__empty {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .loss-report-summary__card strong {
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .btn-export-sm {
+    background: var(--color-elevated);
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .reports-table th {
+    background-color: var(--color-elevated);
+    border-color: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .reports-table td {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .reports-table tbody tr:nth-child(even) td {
+    background-color: var(--color-elevated);
+}
+
+:root[data-theme="dark"] .reports-table tbody tr:hover td {
+    background-color: var(--color-hover-surface);
+}
+
+:root[data-theme="dark"] .status-won {
+    background-color: rgba(47, 133, 90, 0.15);
+    color: #4ade80;
+}
+
+:root[data-theme="dark"] .status-lost {
+    background-color: rgba(197, 48, 48, 0.15);
+    color: #f87171;
+}
+
+:root[data-theme="dark"] .status-active {
+    background-color: rgba(43, 108, 176, 0.15);
+    color: #60a5fa;
+}

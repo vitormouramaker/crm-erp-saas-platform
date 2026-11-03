@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64">
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#C5D200" stroke-width="6"/>
+  <circle cx="47" cy="17" r="6" fill="#C5D200"/>
+  <text x="66" y="42" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#8A8A8A">Órbita CRM</text>
+</svg>

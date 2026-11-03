@@ -1,0 +1,67 @@
+/* Reutilizando estilos de outras paginas de configuracao para consistencia */
+.categories-settings-container .list-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.categories-settings-container .add-new-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-primary);
+    color: #0F172A;
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+}
+
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.category-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.category-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 0;
+}
+
+.category-item-name {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    word-break: break-word;
+}
+
+.category-item-id {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.category-card-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.category-card-actions button {
+    padding: var(--spacing-sm);
+    color: var(--color-text-secondary);
+}
+
+.category-card-actions button:hover {
+    color: var(--color-text-primary);
+}

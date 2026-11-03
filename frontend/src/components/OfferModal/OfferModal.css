@@ -1,0 +1,202 @@
+.offer-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.offer-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 510px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.offer-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.offer-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.offer-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.offer-modal-close:hover {
+  color: #333;
+}
+
+.offer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.offer-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-cancel,
+.btn-save,
+.btn-delete {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+.btn-cancel {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+  background-color: #e2e6ea;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+.current-price-info {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #007bff;
+}
+
+.current-price-info p {
+  margin: 0;
+  color: #666;
+}
+
+.current-price-info strong {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* ===== DARK MODE ===== */
+:root[data-theme="dark"] .offer-modal-content {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .offer-modal-header h2 {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .offer-modal-close {
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .offer-modal-close:hover {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .form-group label {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .form-group input {
+  background-color: var(--color-input-background);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .form-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-focus-ring);
+}
+
+:root[data-theme="dark"] .btn-cancel {
+  background-color: var(--color-elevated);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .btn-cancel:hover {
+  background-color: var(--color-hover-surface);
+}
+
+:root[data-theme="dark"] .current-price-info {
+  background-color: var(--color-elevated);
+  border-left-color: #3b82f6;
+}
+
+:root[data-theme="dark"] .current-price-info p {
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .current-price-info strong {
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,437 @@
+.crm-schedule-calendar-modal {
+  width: min(1180px, calc(100vw - 48px));
+  max-height: min(92vh, calc(100dvh - 32px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.modal-overlay:has(.crm-schedule-calendar-modal) {
+  align-items: center;
+  overflow: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.crm-schedule-calendar-modal .modal-header {
+  flex: 0 0 auto;
+  z-index: 2;
+  background: var(--color-surface, #ffffff);
+}
+
+.crm-schedule-calendar-modal .close-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.crm-schedule-calendar-modal .close-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.crm-schedule-calendar-modal .close-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.crm-schedule-calendar-scroll {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.crm-schedule-calendar-body {
+  order: 2;
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.crm-schedule-calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px 24px;
+  min-height: 0;
+}
+
+.crm-schedule-calendar-panel {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  padding: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.crm-schedule-calendar-panel--details {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.crm-schedule-calendar-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.crm-schedule-calendar-panel__header strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.crm-schedule-calendar-panel__header p,
+.crm-schedule-calendar-panel__header span {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.crm-schedule-calendar-panel .react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+.crm-schedule-calendar-panel .react-calendar__navigation button {
+  min-width: 40px;
+  border-radius: 10px;
+  color: #0f172a;
+  background: transparent;
+}
+
+.crm-schedule-calendar-panel .react-calendar__navigation button:hover,
+.crm-schedule-calendar-panel .react-calendar__navigation button:focus {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.crm-schedule-calendar-panel .react-calendar__tile {
+  position: relative;
+  min-height: 58px;
+  border-radius: 12px;
+}
+
+.crm-schedule-calendar-panel .react-calendar__tile--now {
+  background: rgba(14, 165, 233, 0.12);
+}
+
+.crm-schedule-calendar-panel .react-calendar__tile--active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.crm-calendar__tile--scheduled {
+  background: linear-gradient(180deg, rgba(254, 240, 138, 0.35), rgba(255, 255, 255, 0.98));
+}
+
+.crm-calendar__badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.crm-schedule-calendar-events {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: visible;
+  padding-right: 4px;
+}
+
+.crm-schedule-calendar-event {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+}
+
+.crm-schedule-calendar-event__time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.crm-schedule-calendar-event__time strong {
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.crm-schedule-calendar-event__time span {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.crm-schedule-calendar-event__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.crm-schedule-calendar-event__content strong {
+  color: #0f172a;
+}
+
+.crm-schedule-calendar-event__content span,
+.crm-schedule-calendar-event__content p,
+.crm-schedule-calendar-event__content small {
+  margin: 0;
+  color: #475569;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.crm-schedule-calendar-create {
+  order: 1;
+  padding: 20px 24px 24px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 0 0 auto;
+  max-height: none;
+  overflow: visible;
+  background: var(--color-surface, #ffffff);
+}
+
+.crm-schedule-calendar-create__header strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.crm-schedule-calendar-create__header p {
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.crm-schedule-calendar-create__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.crm-schedule-calendar-create__grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.crm-schedule-calendar-create__grid select,
+.crm-schedule-calendar-create__grid input,
+.crm-schedule-calendar-create__grid textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.crm-schedule-calendar-create__description {
+  grid-column: 1 / -1;
+}
+
+.crm-schedule-calendar-create__description textarea {
+  min-height: 92px;
+  max-height: 180px;
+  resize: vertical;
+}
+
+.crm-schedule-calendar-empty {
+  margin: 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  background: #f8fafc;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .crm-schedule-calendar-modal {
+    width: min(100vw - 24px, 1000px);
+  }
+
+  .crm-schedule-calendar-layout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .crm-schedule-calendar-create {
+    padding: 16px;
+    max-height: none;
+  }
+
+  .crm-schedule-calendar-create__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-schedule-calendar-event {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-overlay:has(.crm-schedule-calendar-modal) {
+    padding: 8px;
+  }
+
+  .crm-schedule-calendar-modal {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .crm-schedule-calendar-modal .modal-header {
+    padding: 12px 14px;
+  }
+
+  .crm-schedule-calendar-modal .modal-header h3 {
+    font-size: 1rem;
+  }
+
+  .crm-schedule-calendar-layout {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .crm-schedule-calendar-panel {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .crm-schedule-calendar-panel__header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .crm-schedule-calendar-panel .react-calendar__navigation {
+    margin-bottom: 6px;
+  }
+
+  .crm-schedule-calendar-panel .react-calendar__navigation button {
+    min-width: 32px;
+    padding: 4px;
+  }
+
+  .crm-schedule-calendar-panel .react-calendar__tile {
+    min-height: 42px;
+    padding: 6px 2px;
+    border-radius: 8px;
+  }
+
+  .crm-calendar__badge {
+    right: 4px;
+    bottom: 4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 0.65rem;
+    line-height: 16px;
+  }
+
+  .crm-schedule-calendar-create {
+    margin-top: 12px;
+    padding: 12px;
+    max-height: none;
+  }
+
+  .crm-schedule-calendar-modal .modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .crm-schedule-calendar-modal .modal-actions button {
+    width: 100%;
+  }
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-panel {
+  border-color: #334155;
+  background: linear-gradient(180deg, #111827, #0f172a);
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-modal .modal-header {
+  background: var(--color-surface, #111827);
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-modal .close-btn {
+  color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-modal .close-btn:hover:not(:disabled) {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-panel__header strong,
+:root[data-theme="dark"] .crm-schedule-calendar-event__time strong,
+:root[data-theme="dark"] .crm-schedule-calendar-event__content strong,
+:root[data-theme="dark"] .crm-schedule-calendar-create__header strong {
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-panel__header p,
+:root[data-theme="dark"] .crm-schedule-calendar-panel__header span,
+:root[data-theme="dark"] .crm-schedule-calendar-event__time span,
+:root[data-theme="dark"] .crm-schedule-calendar-event__content span,
+:root[data-theme="dark"] .crm-schedule-calendar-event__content p,
+:root[data-theme="dark"] .crm-schedule-calendar-event__content small,
+:root[data-theme="dark"] .crm-schedule-calendar-create__header p,
+:root[data-theme="dark"] .crm-schedule-calendar-empty {
+  color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-panel .react-calendar,
+:root[data-theme="dark"] .crm-schedule-calendar-panel .react-calendar__navigation button,
+:root[data-theme="dark"] .crm-schedule-calendar-create__grid label {
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-event,
+:root[data-theme="dark"] .crm-schedule-calendar-create__grid select,
+:root[data-theme="dark"] .crm-schedule-calendar-create__grid input,
+:root[data-theme="dark"] .crm-schedule-calendar-create__grid textarea,
+:root[data-theme="dark"] .crm-schedule-calendar-empty {
+  border-color: #334155;
+  background: #0f172a;
+}
+
+:root[data-theme="dark"] .crm-schedule-calendar-create {
+  border-top-color: #334155;
+  border-bottom-color: #334155;
+  background: var(--color-surface, #111827);
+}

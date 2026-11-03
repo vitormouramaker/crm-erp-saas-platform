@@ -1,0 +1,3 @@
+.legal-footer { padding: 20px 24px; border-top: 1px solid #e1e8e3; }
+.legal-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; }
+.legal-footer a { color: inherit; font-size: 12px; text-underline-offset: 3px; }

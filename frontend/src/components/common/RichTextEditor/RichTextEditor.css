@@ -1,0 +1,62 @@
+.editor-container {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-input-background);
+    color: var(--color-text-primary);
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.toolbar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text-primary);
+}
+
+.toolbar button:hover {
+    background-color: var(--color-hover-surface);
+}
+
+.toolbar button.is-active {
+    background-color: var(--color-hover-surface);
+    color: var(--color-primary);
+}
+
+.tiptap-editor {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 100px;
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+.tiptap-editor:focus {
+    outline: none;
+}
+
+/* Estilo do Placeholder */
+.tiptap-editor p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+    height: 0;
+}
+
+/* Estilo para links dentro do editor */
+.tiptap-editor a {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+}

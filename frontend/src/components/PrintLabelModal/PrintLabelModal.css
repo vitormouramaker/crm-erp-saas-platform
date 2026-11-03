@@ -1,0 +1,297 @@
+/* ---------- UI do seletor de tipo ---------- */
+.label-type-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.label-type-button {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 8px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.2s ease;
+}
+
+.label-type-button:hover {
+  border-color: #aaa;
+  background: #fafafa;
+}
+
+.label-type-button.active {
+  border-color: var(--color-primary-hover);
+  background: #eff6ff;
+}
+
+.label-type-icon {
+  width: 48px;
+  height: 32px;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #6b7280;
+  /* default */
+}
+
+.label-type-button.active .label-type-icon {
+  color: var(--color-primary-hover);
+  /* active */
+}
+
+.label-type-name {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.label-options-section {
+  margin: 14px 0 12px;
+}
+
+.label-options-title {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.label-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.label-option-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.label-option-card:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.label-option-card.checked {
+  border-color: var(--color-primary-hover, #3182ce);
+  background: #eff6ff;
+}
+
+.label-option-card input {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Preview ---------- */
+.label-preview {
+  padding: 12px;
+  border: 1px dashed #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* deixa o preview “bonito” sem tentar ser 1:1 com mm */
+.label-row,
+.label-content,
+.label-tail {
+  border: 1px dashed #eee;
+}
+
+/* SOMENTE PREVIEW */
+.preview-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 35px;
+}
+
+.label-barcode-hidden {
+  visibility: hidden;
+}
+
+.label-tail {
+  min-width: 60px;
+  /* só pra aparecer visualmente no preview */
+}
+
+
+.label-actions {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: rgb(235, 233, 233);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #636974;
+}
+
+.btn-primary-print {
+  background-color: var(--color-primary-hover, #3182ce);
+  color: var(--color-text-primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary-print:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.print-name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 10px 0 12px;
+}
+
+.print-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.print-name-row > span {
+  min-width: 110px;
+  font-weight: 600;
+}
+
+.print-name-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.print-name-controls input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .print-name-row,
+  .print-name-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .print-name-row > span {
+    min-width: 0;
+  }
+
+  .label-type-selector {
+    flex-direction: column;
+  }
+
+  .label-options-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== DARK MODE ===== */
+:root[data-theme="dark"] .label-type-button {
+  background: var(--color-elevated);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .label-type-button:hover {
+  background: var(--color-hover-surface);
+  border-color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .label-type-button.active {
+  background: rgba(197, 210, 0, 0.15);
+  border-color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .label-type-name {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .label-type-icon {
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .label-type-button.active .label-type-icon {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .label-option-card,
+:root[data-theme="dark"] .print-name-controls input {
+  background: var(--color-input-background);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .label-option-card:hover {
+  background: var(--color-hover-surface);
+  border-color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .label-option-card.checked {
+  background: rgba(197, 210, 0, 0.15);
+  border-color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .label-preview {
+  background: var(--color-elevated);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .label-row,
+:root[data-theme="dark"] .label-content,
+:root[data-theme="dark"] .label-tail {
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .label-options-title {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .btn-secondary {
+  background-color: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--color-hover-surface);
+}

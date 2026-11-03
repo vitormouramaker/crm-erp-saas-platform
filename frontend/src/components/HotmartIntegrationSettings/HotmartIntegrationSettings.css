@@ -1,0 +1,325 @@
+.hotmart-integration-form {
+  display: grid;
+  gap: 16px;
+}
+
+.hotmart-integration-field {
+  display: grid;
+  gap: 8px;
+}
+
+.hotmart-integration-field span {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.hotmart-integration-field input {
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 0 12px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.hotmart-integration-switches {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.hotmart-integration-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hotmart-integration-check input {
+  margin-top: 2px;
+}
+
+.hotmart-integration-check div {
+  display: grid;
+  gap: 4px;
+}
+
+.hotmart-integration-check strong {
+  color: var(--color-text-primary);
+}
+
+.hotmart-integration-check span {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.hotmart-integration-actions {
+  justify-content: flex-start;
+}
+
+.hotmart-integration-summary-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.hotmart-integration-stat {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hotmart-integration-stat strong {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+.hotmart-integration-stat span {
+  color: var(--color-text-secondary);
+}
+
+.hotmart-mapping {
+  display: grid;
+  gap: 12px;
+}
+
+.hotmart-mapping__list {
+  display: grid;
+  gap: 12px;
+}
+
+.hotmart-mapping-card {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hotmart-mapping-card__info {
+  display: grid;
+  gap: 6px;
+}
+
+.hotmart-mapping-card__info strong {
+  color: var(--color-text-primary);
+}
+
+.hotmart-mapping-card__info span {
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+.hotmart-mapping-card__controls {
+  display: grid;
+  gap: 10px;
+}
+
+.hotmart-mapping-card__controls select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 0 12px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.hotmart-mapping-card__hint {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.hotmart-mapping-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hubla-utm-mapping__form {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.7fr) minmax(220px, 1.5fr) minmax(220px, 1.2fr) auto;
+  gap: 12px;
+  align-items: end;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hubla-utm-mapping__form label {
+  display: grid;
+  gap: 7px;
+}
+
+.hubla-utm-mapping__form label span {
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hubla-utm-mapping__form input,
+.hubla-utm-mapping__form select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 0 12px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.hubla-utm-mapping__rules {
+  display: grid;
+  gap: 8px;
+}
+
+.hubla-utm-rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hubla-utm-rule div {
+  display: grid;
+  gap: 4px;
+}
+
+.hubla-utm-rule strong,
+.hubla-utm-rule b {
+  color: var(--color-text-primary);
+}
+
+.hubla-utm-rule span,
+.hubla-utm-mapping__hint {
+  color: var(--color-text-secondary);
+}
+
+.hubla-utm-mapping__hint {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.hotmart-events {
+  display: grid;
+  gap: 12px;
+}
+
+.hotmart-events__header h4 {
+  margin: 0;
+}
+
+.hotmart-events__header p {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.hotmart-events__empty {
+  margin: 0;
+  padding: 14px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius-md);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+}
+
+.hotmart-events__list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.hotmart-event-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+}
+
+.hotmart-event-card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+.hotmart-event-card__topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.hotmart-event-card__topline strong {
+  color: var(--color-text-primary);
+}
+
+.hotmart-event-card__topline span {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.hotmart-event-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hotmart-event-card__badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .hubla-utm-mapping__form {
+    grid-template-columns: 1fr;
+  }
+
+  .hubla-utm-mapping__form .settings-integration-button {
+    width: 100%;
+  }
+
+  .hubla-utm-rule {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hotmart-mapping-card__actions {
+    flex-direction: column;
+  }
+
+  .hotmart-mapping-card__actions .settings-integration-button {
+    width: 100%;
+  }
+
+  .hotmart-event-card__topline {
+    flex-direction: column;
+  }
+
+  .hotmart-event-card__topline span {
+    text-align: left;
+  }
+}

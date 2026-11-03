@@ -1,0 +1,404 @@
+.rh-vacations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.rh-vacations--embedded {
+  padding: 0;
+  gap: 0;
+}
+
+.rh-vacations-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rh-vacations-wrapper--embedded {
+  padding: 20px;
+}
+
+.rh-vacations__filters,
+.rh-vacations__create,
+.rh-vacations__table {
+  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rh-vacations__filters {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-radius: 0;
+  border: none;
+  align-items: center;
+}
+
+.rh-vacations__filter-summary {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.rh-vacations__filter-summary > div {
+  min-width: 220px;
+}
+
+.rh-vacations__filter-label {
+  display: block;
+  font-size: 12px;
+  color: #66778f;
+  margin-bottom: 4px;
+}
+
+.rh-vacations__filter-summary strong {
+  color: #1f314d;
+  font-size: 14px;
+}
+
+.rh-vacations__create {
+  grid-column: 1 / -1;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+}
+
+.rh-vacations__create h2 {
+  margin: 0;
+  color: #1f314d;
+  font-size: 19px;
+}
+
+.rh-vacations__subtitle {
+  margin: 0;
+  color: #55657d;
+  font-size: 14px;
+}
+
+.rh-vacations__create-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rh-vacations__create-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.rh-vacations__field {
+  display: grid;
+  gap: 7px;
+}
+
+.rh-vacations__field--full {
+  grid-column: 1 / -1;
+}
+
+.rh-vacations__field label {
+  font-size: 13px;
+  color: #47556b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rh-vacations__field input,
+.rh-vacations__field select,
+.rh-vacations__field textarea {
+  width: 100%;
+  border: 1px solid #ced9e8;
+  border-radius: var(--border-radius-md);
+  padding: 10px 11px;
+  background: #fff;
+  color: #24354f;
+  font: inherit;
+}
+
+.rh-vacations__field input:focus,
+.rh-vacations__field select:focus,
+.rh-vacations__field textarea:focus {
+  outline: none;
+  border-color: #3f7ff8;
+  box-shadow: 0 0 0 3px rgba(63, 127, 248, 0.15);
+}
+
+.rh-vacations__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.rh-vacations__actions .rh-vacations__primary,
+.rh-vacations__actions .rh-vacations__secondary {
+  margin-top: 0;
+}
+
+.rh-vacations__primary {
+  margin-top: 14px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  background: var(--color-primary);
+  color: #111827;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rh-vacations__primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rh-vacations__secondary {
+  border: 1px solid #cfd9e6;
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  background: #fff;
+  color: #24354f;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rh-vacations__secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rh-vacations__message {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #2d3a50;
+  background: #eef4ff;
+  border: 1px solid #d5e3fb;
+  border-radius: var(--border-radius-md);
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.rh-vacations__table {
+  padding: 22px;
+}
+
+.rh-vacations__table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.rh-vacations__table-header h2 {
+  margin: 0;
+  color: #1f314d;
+}
+
+.rh-vacations__table-header span {
+  color: var(--color-text-secondary);
+  font-weight: 700;
+}
+
+.rh-vacations__empty {
+  color: #66778f;
+  padding: 8px 0;
+}
+
+.rh-vacations__table-wrapper {
+  overflow: auto;
+  border: 1px solid #e8eef7;
+  border-radius: var(--border-radius-md);
+}
+
+.rh-vacations__gridtable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.rh-vacations__gridtable th,
+.rh-vacations__gridtable td {
+  border-bottom: 1px solid #ecf1f7;
+  padding: 11px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rh-vacations__gridtable th {
+  color: #526279;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f7faff;
+}
+
+.rh-vacations__cell-muted {
+  color: #66778f;
+}
+
+.rh-vacations__row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.rh-vacations__row-actions button {
+  border: 1px solid #d2dcea;
+  background: #fff;
+  border-radius: var(--border-radius-md);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.rh-vacations__row-actions button:hover {
+  border-color: #9db6de;
+  background: #f5f9ff;
+}
+
+.rh-vacations__modal {
+  display: grid;
+  gap: 12px;
+}
+
+.rh-vacations__modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.rh-vacations__modal-actions button {
+  border-radius: var(--border-radius-md);
+  padding: 8px 12px;
+  border: 1px solid #cfd9e6;
+  background: #fff;
+  cursor: pointer;
+}
+
+.rh-vacations__modal-actions .rh-vacations__primary {
+  border: none;
+  margin-top: 0;
+  background: var(--color-primary);
+  color: #111827;
+}
+
+@media (max-width: 1000px) {
+  .rh-vacations-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-vacations__create-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-vacations__table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rh-vacations__create-actions {
+    flex-direction: column;
+  }
+
+  .rh-vacations__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .rh-vacations {
+    padding: 16px;
+  }
+
+  .rh-vacations--embedded {
+    padding: 0;
+    gap: 0;
+  }
+
+  .rh-vacations-wrapper--embedded {
+    padding: 16px;
+  }
+}
+
+:root[data-theme="dark"] .rh-vacations__filters,
+:root[data-theme="dark"] .rh-vacations__create,
+:root[data-theme="dark"] .rh-vacations__table {
+  border-color: var(--color-border);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] .rh-vacations__filter-label,
+:root[data-theme="dark"] .rh-vacations__empty,
+:root[data-theme="dark"] .rh-vacations__cell-muted {
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .rh-vacations__filter-summary strong,
+:root[data-theme="dark"] .rh-vacations__create h2,
+:root[data-theme="dark"] .rh-vacations__field input,
+:root[data-theme="dark"] .rh-vacations__field select,
+:root[data-theme="dark"] .rh-vacations__field textarea,
+:root[data-theme="dark"] .rh-vacations__secondary,
+:root[data-theme="dark"] .rh-vacations__table-header h2,
+:root[data-theme="dark"] .rh-vacations__gridtable td,
+:root[data-theme="dark"] .rh-vacations__row-actions button,
+:root[data-theme="dark"] .rh-vacations__modal-actions button {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .rh-vacations__create {
+  background: linear-gradient(180deg, #1b1b1b 0%, #151515 100%);
+}
+
+:root[data-theme="dark"] .rh-vacations__subtitle,
+:root[data-theme="dark"] .rh-vacations__field label {
+  color: #c4c4c4;
+}
+
+:root[data-theme="dark"] .rh-vacations__field input,
+:root[data-theme="dark"] .rh-vacations__field select,
+:root[data-theme="dark"] .rh-vacations__field textarea,
+:root[data-theme="dark"] .rh-vacations__secondary,
+:root[data-theme="dark"] .rh-vacations__row-actions button,
+:root[data-theme="dark"] .rh-vacations__modal-actions button,
+:root[data-theme="dark"] .rh-vacations__table-wrapper {
+  background: var(--color-input-background);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .rh-vacations__message {
+  color: var(--color-text-primary);
+  background: rgba(197, 210, 0, 0.12);
+  border-color: rgba(197, 210, 0, 0.22);
+}
+
+:root[data-theme="dark"] .rh-vacations__gridtable th {
+  color: var(--color-text-secondary);
+  background: #1f1f1f;
+}
+
+:root[data-theme="dark"] .rh-vacations__gridtable th,
+:root[data-theme="dark"] .rh-vacations__gridtable td {
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .rh-vacations__row-actions button:hover {
+  border-color: #4b5563;
+  background: #252525;
+}
+

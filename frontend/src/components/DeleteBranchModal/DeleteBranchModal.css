@@ -1,0 +1,130 @@
+.delete-branch-modal p {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    font-size: 16px;
+    color: var(--color-text-primary);
+}
+
+/* Toggle Switch Styling */
+.delete-branch-modal .toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinha label à esquerda e toggle à direita */
+    background-color: var(--color-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md); /* Mais arredondado */
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--color-border); /* Adiciona borda */
+}
+.delete-branch-modal .toggle-wrapper label {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 15px;
+}
+.toggle-switch {
+    appearance: none; /* Remove o estilo padrão do navegador */
+    width: 40px; /* Largura do switch */
+    height: 20px; /* Altura do switch */
+    border-radius: 10px; /* Deixa o switch arredondado */
+    background-color: #ccc; /* Cor de fundo quando desligado */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px; /* Tamanho da bolinha */
+    height: 16px; /* Tamanho da bolinha */
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.3s;
+}
+.toggle-switch:checked {
+    background-color: var(--color-primary); /* Cor quando ligado */
+}
+.toggle-switch:checked::before {
+    transform: translateX(20px); /* Move a bolinha para a direita */
+}
+
+/* Remanejamento Section */
+.remanejar-section {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface); /* Fundo branco ou claro */
+    padding: var(--spacing-lg); /* Aumenta o padding */
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+.remanejar-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+.remanejar-row .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+.remanejar-row .form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+.remanejar-row .form-group select,
+.remanejar-row .form-group input[type="text"] {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    background-color: var(--color-background); /* Deixa campos disable mais claros */
+    color: var(--color-text-primary);
+}
+.remanejar-row .form-group input:disabled {
+    background-color: var(--color-background);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+/* Estilo para o ícone de seta */
+.remanejar-arrow-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    color: var(--color-text-secondary);
+    min-width: 24px; /* Garante que o ícone não se "esprema" */
+}
+
+/* Botões de Ação */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+.cancel-button, .delete-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.cancel-button {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+.cancel-button:hover {
+    background-color: var(--color-background);
+}
+.delete-button {
+    background-color: #dc3545; /* Cor vermelha para ação destrutiva */
+    color: #fff;
+    border: 1px solid #dc3545;
+}
+.delete-button:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+    border-color: #c82333;
+}

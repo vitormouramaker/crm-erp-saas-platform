@@ -1,0 +1,341 @@
+.developer-webhooks-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.developer-webhooks-settings__header,
+.developer-webhooks-settings__panel-header,
+.developer-webhooks-settings__list-top,
+.developer-webhooks-settings__actions,
+.developer-webhooks-settings__list-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.developer-webhooks-settings__header h2,
+.developer-webhooks-settings__panel-header h3 {
+  margin: 0;
+}
+
+.developer-webhooks-settings__header p,
+.developer-webhooks-settings__panel-header p,
+.developer-webhooks-settings__list-top p,
+.developer-webhooks-settings__error p,
+.developer-webhooks-settings__event-header p {
+  margin: 0.35rem 0 0;
+  color: #52607a;
+}
+
+.developer-webhooks-settings__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 1.5rem;
+}
+
+.developer-webhooks-settings__panel,
+.developer-webhooks-settings__error {
+  background: #ffffff;
+  border: 1px solid #d8e2ef;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(18, 38, 63, 0.06);
+}
+
+.developer-webhooks-settings__warning {
+  border: 1px solid #f3d18b;
+  background: #fff7e6;
+  color: #7c4a03;
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+}
+
+.developer-webhooks-settings__warning strong,
+.developer-webhooks-settings__warning p {
+  margin: 0;
+}
+
+.developer-webhooks-settings__warning p {
+  margin-top: 0.4rem;
+  line-height: 1.55;
+}
+
+.developer-webhooks-settings__form,
+.developer-webhooks-settings__events,
+.developer-webhooks-settings__list,
+.developer-webhooks-settings__history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.developer-webhooks-settings__field,
+.developer-webhooks-settings__toggle,
+.developer-webhooks-settings__event-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.developer-webhooks-settings__field span,
+.developer-webhooks-settings__event-payload span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2f46;
+}
+
+.developer-webhooks-settings__field input,
+.developer-webhooks-settings__field select {
+  border: 1px solid #c9d7e8;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  background: #ffffff;
+}
+
+.developer-webhooks-settings__field input:focus,
+.developer-webhooks-settings__field select:focus,
+.developer-webhooks-settings__event-header input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.developer-webhooks-settings__helper,
+.developer-webhooks-settings__security-summary {
+  margin: 0.2rem 0 0;
+  font-size: 0.83rem;
+  color: #52607a;
+}
+
+.developer-webhooks-settings__toggle {
+  flex-direction: row;
+  align-items: center;
+}
+
+.developer-webhooks-settings__toggle span {
+  color: #1f2f46;
+}
+
+.developer-webhooks-settings__event-card,
+.developer-webhooks-settings__list-card,
+.developer-webhooks-settings__history-card {
+  border: 1px solid #d8e2ef;
+  border-radius: 16px;
+  padding: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+}
+
+.developer-webhooks-settings__history-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.developer-webhooks-settings__history-meta,
+.developer-webhooks-settings__empty-history {
+  margin: 0.75rem 0 0;
+  color: #52607a;
+  font-size: 0.88rem;
+}
+
+.developer-webhooks-settings__history-error {
+  margin: 0.75rem 0 0;
+  color: #b91c1c;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.developer-webhooks-settings__event-header {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.developer-webhooks-settings__event-header input {
+  margin-top: 0.2rem;
+}
+
+.developer-webhooks-settings__event-payload {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.developer-webhooks-settings__event-payload summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.developer-webhooks-settings__event-payload summary::-webkit-details-marker {
+  display: none;
+}
+
+.developer-webhooks-settings__event-payload summary::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 0.45rem;
+}
+
+.developer-webhooks-settings__event-payload[open] summary::before {
+  content: "-";
+}
+
+.developer-webhooks-settings__event-payload pre {
+  margin: 0;
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: #0f172a;
+  color: #dbeafe;
+  overflow: auto;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.developer-webhooks-settings__primary-button,
+.developer-webhooks-settings__secondary-button,
+.developer-webhooks-settings__danger-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.developer-webhooks-settings__primary-button {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.developer-webhooks-settings__secondary-button {
+  background: #e6edf7;
+  color: #1f2f46;
+}
+
+.developer-webhooks-settings__danger-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.developer-webhooks-settings__primary-button:disabled,
+.developer-webhooks-settings__secondary-button:disabled,
+.developer-webhooks-settings__danger-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.developer-webhooks-settings__status {
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.developer-webhooks-settings__status--active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.developer-webhooks-settings__status--inactive {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.developer-webhooks-settings__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.developer-webhooks-settings__badge {
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .developer-webhooks-settings__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .developer-webhooks-settings__header,
+  .developer-webhooks-settings__panel-header,
+  .developer-webhooks-settings__actions,
+  .developer-webhooks-settings__list-actions,
+  .developer-webhooks-settings__list-top {
+    flex-direction: column;
+  }
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__panel,
+:root[data-theme="dark"] .developer-webhooks-settings__error,
+:root[data-theme="dark"] .developer-webhooks-settings__event-card,
+:root[data-theme="dark"] .developer-webhooks-settings__list-card,
+:root[data-theme="dark"] .developer-webhooks-settings__history-card {
+  background: #111827;
+  border-color: #243041;
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__warning {
+  background: rgba(120, 53, 15, 0.28);
+  border-color: #92400e;
+  color: #fdba74;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__header p,
+:root[data-theme="dark"] .developer-webhooks-settings__panel-header p,
+:root[data-theme="dark"] .developer-webhooks-settings__list-top p,
+:root[data-theme="dark"] .developer-webhooks-settings__history-meta,
+:root[data-theme="dark"] .developer-webhooks-settings__empty-history,
+:root[data-theme="dark"] .developer-webhooks-settings__error p,
+:root[data-theme="dark"] .developer-webhooks-settings__event-header p,
+:root[data-theme="dark"] .developer-webhooks-settings__toggle span {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__header h2,
+:root[data-theme="dark"] .developer-webhooks-settings__panel-header h3,
+:root[data-theme="dark"] .developer-webhooks-settings__field span,
+:root[data-theme="dark"] .developer-webhooks-settings__event-payload span,
+:root[data-theme="dark"] .developer-webhooks-settings__list-card strong {
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__field input,
+:root[data-theme="dark"] .developer-webhooks-settings__field select {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__event-payload summary {
+  color: #93c5fd;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__helper,
+:root[data-theme="dark"] .developer-webhooks-settings__security-summary {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__history-error {
+  color: #fca5a5;
+}
+
+:root[data-theme="dark"] .developer-webhooks-settings__secondary-button {
+  background: #1e293b;
+  color: #e2e8f0;
+}

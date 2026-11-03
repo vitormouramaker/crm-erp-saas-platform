@@ -1,0 +1,105 @@
+.camera-capture {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.camera-capture-stage {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-capture-video,
+.camera-capture-preview {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-capture-status {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.camera-capture-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.camera-capture-primary,
+.camera-capture-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 132px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.camera-capture-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.camera-capture-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.camera-capture-secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.camera-capture-secondary:hover:not(:disabled) {
+  background: #cbd5e1;
+}
+
+.camera-capture-primary:disabled,
+.camera-capture-secondary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.camera-capture-error {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+}
+
+.camera-capture-error p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .camera-capture-stage {
+    min-height: 280px;
+  }
+
+  .camera-capture-actions {
+    justify-content: stretch;
+  }
+
+  .camera-capture-primary,
+  .camera-capture-secondary {
+    width: 100%;
+  }
+}

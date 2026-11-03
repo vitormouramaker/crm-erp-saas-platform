@@ -1,0 +1,210 @@
+.payment-history-page {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.payment-history-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.payment-history-back {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-history-back:hover {
+  background: var(--color-hover-surface);
+}
+
+.payment-history-summary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-history-summary strong {
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.payment-history-summary span {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.payment-history-state {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-history-state.error {
+  color: #b91c1c;
+  border-color: rgba(185, 28, 28, 0.22);
+  background: rgba(185, 28, 28, 0.08);
+}
+
+.payment-history-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.payment-history-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-history-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.payment-history-card-top h3 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 16px;
+}
+
+.payment-history-card-top p {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.status-badge {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  height: fit-content;
+}
+
+.status-badge.success {
+  background: rgba(34, 197, 94, 0.14);
+  color: #15803d;
+}
+
+.status-badge.warning {
+  background: rgba(245, 158, 11, 0.16);
+  color: #b45309;
+}
+
+.status-badge.danger {
+  background: rgba(239, 68, 68, 0.14);
+  color: #b91c1c;
+}
+
+.status-badge.default {
+  background: var(--color-elevated);
+  color: var(--color-text-secondary);
+}
+
+.payment-history-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.payment-history-grid span {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.payment-history-grid strong {
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.payment-history-links {
+  display: flex;
+  gap: 12px;
+}
+
+.payment-history-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:root[data-theme="dark"] .payment-history-back,
+:root[data-theme="dark"] .payment-history-summary,
+:root[data-theme="dark"] .payment-history-state,
+:root[data-theme="dark"] .payment-history-card {
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .payment-history-state.error {
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.28);
+  background: rgba(127, 29, 29, 0.22);
+}
+
+:root[data-theme="dark"] .status-badge.success {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+:root[data-theme="dark"] .status-badge.warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+:root[data-theme="dark"] .status-badge.danger {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+}
+
+:root[data-theme="dark"] .status-badge.default {
+  background: #202020;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 900px) {
+  .payment-history-header {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-history-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+

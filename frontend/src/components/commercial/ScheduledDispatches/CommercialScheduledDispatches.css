@@ -1,0 +1,450 @@
+.commercial-scheduled-dispatches {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--bg-body, #f7fafc);
+}
+
+.commercial-scheduled-dispatches__composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+.commercial-scheduled-dispatches__panel {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.commercial-scheduled-dispatches__panel--form {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.commercial-scheduled-dispatches__preview {
+  min-width: 0;
+  height: 100%;
+  padding: 20px 24px;
+  border: 1px solid #cbd5e0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  align-content: start;
+}
+
+.commercial-scheduled-dispatches__preview h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.commercial-scheduled-dispatches__panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.commercial-scheduled-dispatches__panel-head h3 {
+  margin: 0 0 6px;
+  color: var(--text-primary, var(--color-text-primary));
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.commercial-scheduled-dispatches__panel-head p {
+  margin: 0;
+  color: var(--text-secondary, var(--color-text-secondary));
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.commercial-scheduled-dispatches__refresh-button,
+.commercial-scheduled-dispatches__submit-button,
+.commercial-scheduled-dispatches__cancel-button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.commercial-scheduled-dispatches__refresh-button {
+  min-height: 38px;
+  padding: 0 14px;
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.commercial-scheduled-dispatches__submit-button {
+  min-height: 38px;
+  padding: 0 14px;
+  background: var(--color-primary, #c5d200);
+  color: var(--color-primary-light, #0f172a);
+}
+
+.commercial-scheduled-dispatches__cancel-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  background: #ffffff;
+  border-color: #f3b3b3;
+  color: #991b1b;
+}
+
+.commercial-scheduled-dispatches__refresh-button:hover,
+.commercial-scheduled-dispatches__cancel-button:hover {
+  background: #f8fafc;
+}
+
+.commercial-scheduled-dispatches__submit-button:hover {
+  background: var(--color-primary-hover, var(--color-primary, #c5d200));
+}
+
+.commercial-scheduled-dispatches__refresh-button:disabled,
+.commercial-scheduled-dispatches__submit-button:disabled,
+.commercial-scheduled-dispatches__cancel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.commercial-scheduled-dispatches__form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.commercial-scheduled-dispatches__form-grid label,
+.commercial-scheduled-dispatches__media-box label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-secondary, var(--color-text-secondary));
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.commercial-scheduled-dispatches__form-grid select,
+.commercial-scheduled-dispatches__form-grid input,
+.commercial-scheduled-dispatches__media-box input,
+.commercial-scheduled-dispatches__parameter-card input,
+.commercial-scheduled-dispatches__parameter-card select {
+  width: 100%;
+  min-height: 38px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  padding: 0 12px;
+  color: var(--text-primary, var(--color-text-primary));
+  font-size: 0.92rem;
+}
+
+.commercial-scheduled-dispatches__form-grid label:first-child,
+.commercial-scheduled-dispatches__form-grid label:nth-child(2) {
+  grid-column: span 1;
+}
+
+.commercial-scheduled-dispatches__form-grid select:focus,
+.commercial-scheduled-dispatches__form-grid input:focus,
+.commercial-scheduled-dispatches__media-box input:focus,
+.commercial-scheduled-dispatches__parameter-card input:focus,
+.commercial-scheduled-dispatches__parameter-card select:focus {
+  outline: none;
+  border-color: #4b77d9;
+  box-shadow: 0 0 0 3px rgba(75, 119, 217, 0.14);
+}
+
+.commercial-scheduled-dispatches__number-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f8fcd8;
+  border: 1px solid var(--color-primary, #c5d200);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+
+.commercial-scheduled-dispatches__media-box,
+.commercial-scheduled-dispatches__parameter-section,
+.commercial-scheduled-dispatches__button-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.commercial-scheduled-dispatches__media-box strong,
+.commercial-scheduled-dispatches__parameter-section h4,
+.commercial-scheduled-dispatches__button-card strong {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--text-primary, var(--color-text-primary));
+}
+
+.commercial-scheduled-dispatches__parameter-list,
+.commercial-scheduled-dispatches__button-sections {
+  display: grid;
+  gap: 14px;
+}
+
+.commercial-scheduled-dispatches__parameter-card {
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.commercial-scheduled-dispatches__parameter-card small {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-secondary, var(--color-text-secondary));
+  line-height: 1.4;
+}
+
+.commercial-scheduled-dispatches__parameter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.commercial-scheduled-dispatches__parameter-head strong {
+  margin: 0;
+}
+
+.commercial-scheduled-dispatches__parameter-head select {
+  max-width: 180px;
+}
+
+.commercial-scheduled-dispatches__parameter-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.commercial-scheduled-dispatches__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.commercial-scheduled-dispatches__actions small {
+  color: var(--text-secondary, var(--color-text-secondary));
+  line-height: 1.4;
+}
+
+.commercial-scheduled-dispatches__schedule-list {
+  display: grid;
+  gap: 14px;
+}
+
+.commercial-scheduled-dispatches__schedule-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.commercial-scheduled-dispatches__schedule-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.commercial-scheduled-dispatches__schedule-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.commercial-scheduled-dispatches__schedule-title-row h4 {
+  margin: 0;
+  color: var(--text-primary, var(--color-text-primary));
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.commercial-scheduled-dispatches__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.commercial-scheduled-dispatches__status--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.commercial-scheduled-dispatches__status--processing {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.commercial-scheduled-dispatches__status--completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.commercial-scheduled-dispatches__status--completed_with_errors,
+.commercial-scheduled-dispatches__status--failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.commercial-scheduled-dispatches__status--canceled {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.commercial-scheduled-dispatches__schedule-meta,
+.commercial-scheduled-dispatches__schedule-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: var(--text-secondary, var(--color-text-secondary));
+  font-size: 0.92rem;
+}
+
+.commercial-scheduled-dispatches__schedule-meta {
+  margin-bottom: 10px;
+}
+
+.commercial-scheduled-dispatches__schedule-meta span,
+.commercial-scheduled-dispatches__schedule-counts span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.commercial-scheduled-dispatches__schedule-error {
+  margin: 12px 0 0;
+  color: #991b1b;
+  line-height: 1.45;
+}
+
+.commercial-scheduled-dispatches__empty {
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--text-secondary, var(--color-text-secondary));
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches {
+  background-color: var(--color-background);
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__panel,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__schedule-card,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__preview {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__refresh-button,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__cancel-button,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__parameter-card {
+  background: var(--color-elevated);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__refresh-button:hover,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__cancel-button:hover {
+  background: var(--color-hover-surface);
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__form-grid select,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__form-grid input,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__media-box input,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__parameter-card input,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__parameter-card select {
+  background: var(--color-input-background);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__media-box,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__parameter-section,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__button-card,
+:root[data-theme="dark"] .commercial-scheduled-dispatches__empty {
+  background: var(--color-elevated);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .commercial-scheduled-dispatches__number-chip {
+  background: rgba(197, 210, 0, 0.12);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 900px) {
+  .commercial-scheduled-dispatches {
+    padding: 14px;
+  }
+
+  .commercial-scheduled-dispatches__composer {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-scheduled-dispatches__panel {
+    padding: 16px;
+  }
+
+  .commercial-scheduled-dispatches__preview {
+    padding: 16px;
+  }
+
+  .commercial-scheduled-dispatches__panel-head,
+  .commercial-scheduled-dispatches__actions,
+  .commercial-scheduled-dispatches__schedule-card,
+  .commercial-scheduled-dispatches__schedule-title-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .commercial-scheduled-dispatches__form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-scheduled-dispatches__parameter-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .commercial-scheduled-dispatches__parameter-head select {
+    max-width: none;
+  }
+}

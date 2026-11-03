@@ -1,0 +1,63 @@
+# Sobe o Orbita CRM localmente: PostgreSQL + API + front web.
+#
+#   docker compose up --build
+#
+# Front: http://localhost:5173   API: http://localhost:4444/health
+# Contas de demonstracao (criadas na subida): veja o README.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: orbita_crm
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d orbita_crm"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      PORT: 4444
+      TZ: America/Sao_Paulo
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: orbita_crm
+      APP_WEB_BASE_URL: http://localhost:5173
+      PUBLIC_API_URL: http://localhost:4444
+      SESSION_JWT_SECRET: segredo-local-somente-para-demonstracao-0001
+      PUBLIC_LINK_SECRET: segredo-local-somente-para-demonstracao-0002
+      # Opcional: analise de atendimento com IA.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    # Cria as tabelas, as contas de demonstracao e sobe a API.
+    command: >
+      sh -c "node scripts/init-db.js &&
+             node scripts/seed-demo.js &&
+             node src/app.js"
+    ports:
+      - "4444:4444"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:4444
+    depends_on:
+      - backend
+    ports:
+      - "5173:3000"
+
+volumes:
+  db-data:

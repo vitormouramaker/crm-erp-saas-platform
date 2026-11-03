@@ -1,0 +1,116 @@
+.rh-admin-page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  background-color: var(--color-background);
+}
+
+.rh-admin-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.rh-admin-header__content h1 {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.rh-admin-header__content p {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-admin-tabs {
+  display: flex;
+  padding: 0 var(--spacing-lg);
+  gap: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  overflow-x: auto;
+}
+
+.rh-admin-tabs button {
+  padding: var(--spacing-md) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-radius: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  white-space: nowrap;
+}
+
+.rh-admin-tabs button:hover {
+  color: var(--color-text-primary);
+  background-color: transparent;
+}
+
+.rh-admin-tabs button.active {
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary);
+  background-color: transparent;
+}
+
+.rh-admin-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.rh-admin-placeholder {
+  margin: var(--spacing-lg);
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.rh-admin-placeholder h2 {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.rh-admin-placeholder p {
+  margin: 8px 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rh-admin-placeholder__button {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  padding: 12px 16px;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: #111827;
+}
+
+@media (max-width: 768px) {
+  .rh-admin-header {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .rh-admin-placeholder {
+  border-color: var(--color-border);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] .rh-admin-tabs button {
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .rh-admin-tabs button:hover {
+  color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .rh-admin-tabs button.active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-primary);
+}
+

@@ -1,0 +1,512 @@
+.customer-history-modal {
+    width: 650px;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+}
+
+.history-header {
+    background-color: #f7fafc;
+    padding: 20px 24px;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 20px 0 20px;
+    border-radius: 8px;
+}
+
+.customer-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.customer-identity h2 {
+    font-size: 1.25rem;
+    color: #2d3748;
+    margin: 0 0 4px 0;
+}
+
+.customer-since {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.customer-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.history-kpis {
+    display: flex;
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.history-kpi-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.kpi-label {
+    font-size: 0.75rem;
+    color: #718096;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.kpi-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.kpi-value.money {
+    color: #3182ce;
+}
+
+.history-timeline-container {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+    background-color: #f7fafc;
+}
+
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-list::before {
+    display: none;
+}
+
+.timeline-row {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.timeline-row:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+    position: relative;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 40px;
+    bottom: -26px;
+    width: 2px;
+    background-color: #cbd5e0;
+    z-index: 0;
+}
+
+.timeline-icon-bubble {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #718096;
+    background-color: white;
+    border: 2px solid #cbd5e0;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.timeline-icon-bubble.sale {
+    border-color: #48bb78;
+    color: #48bb78;
+    background-color: #f0fff4;
+}
+
+.timeline-icon-bubble.call {
+    border-color: #4299e1;
+    color: #4299e1;
+    background-color: #ebf8ff;
+}
+
+.timeline-icon-bubble.meeting {
+    border-color: #ed8936;
+    color: #ed8936;
+    background-color: #fffaf0;
+}
+
+.timeline-icon-bubble.whatsapp {
+    border-color: #38a169;
+    color: #38a169;
+    background-color: #f0fff4;
+}
+
+.timeline-icon-bubble.refusal {
+    border-color: #f56565;
+    color: #f56565;
+    background-color: #fff5f5;
+}
+
+@keyframes timeline-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(66, 153, 225, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+    }
+}
+
+.timeline-icon-bubble.pulse-icon {
+    animation: timeline-pulse 2s infinite;
+    border-color: #3182ce;
+    color: #3182ce;
+    background-color: white;
+}
+
+.attendance-card-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.current-card .attendance-card {
+    border: 2px solid #3182ce;
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.15);
+}
+
+.refusal-card .attendance-card {
+    border: 2px solid #e53e3e;
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.15);
+    background-color: #fff5f5;
+}
+
+.current-badge {
+    display: inline-block;
+    background-color: #3182ce;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    z-index: 2;
+}
+
+.refusal-badge {
+    display: inline-block;
+    background-color: #e53e3e;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    z-index: 2;
+}
+
+.attendance-card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.attendance-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e0;
+}
+
+.current-card .attendance-card:hover {
+    border-color: #3182ce;
+}
+
+.refusal-card .attendance-card:hover {
+    border-color: #c53030;
+}
+
+.attendance-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+.attendance-header:hover {
+    background-color: #f8fafc;
+}
+
+.attendance-header.expanded {
+    background-color: #f7fafc;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.attendance-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.attendance-title-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.attendance-main-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.attendance-subtitle {
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+.expand-icon {
+    color: #cbd5e0;
+    transition: transform 0.3s ease;
+}
+
+.expand-icon.rotated {
+    transform: rotate(180deg);
+    color: #718096;
+}
+
+.attendance-body {
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid transparent;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.attendance-detail-row {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.attendance-desc {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.attendance-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #edf2f7;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.attendant-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #edf2f7;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.value-badge {
+    color: #38a169;
+    font-weight: 600;
+    background-color: #f0fff4;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.attendance-finalize-btn {
+    border: 1px solid #f59e0b;
+    background: #fef3c7;
+    color: #92400e;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.attendance-finalize-btn:hover {
+    background: #fde68a;
+}
+
+/* ===== DARK MODE ===== */
+:root[data-theme="dark"] .history-header {
+    background-color: var(--color-elevated);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .customer-identity h2 {
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .customer-since,
+:root[data-theme="dark"] .contact-item {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .history-kpis {
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .history-kpi-card {
+    background: var(--color-elevated);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .kpi-label {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .kpi-value {
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .history-timeline-container {
+    background-color: var(--color-background);
+}
+
+:root[data-theme="dark"] .timeline-line {
+    background-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble {
+    background-color: var(--color-elevated);
+    border-color: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble.sale {
+    background-color: rgba(72, 187, 120, 0.12);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble.call {
+    background-color: rgba(66, 153, 225, 0.12);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble.meeting {
+    background-color: rgba(237, 137, 54, 0.12);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble.whatsapp {
+    background-color: rgba(56, 161, 105, 0.12);
+}
+
+:root[data-theme="dark"] .timeline-icon-bubble.refusal {
+    background-color: rgba(245, 101, 101, 0.12);
+}
+
+:root[data-theme="dark"] .attendance-card {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .attendance-header {
+    background-color: var(--color-surface);
+}
+
+:root[data-theme="dark"] .attendance-header:hover {
+    background-color: var(--color-elevated);
+}
+
+:root[data-theme="dark"] .attendance-header.expanded {
+    background-color: var(--color-elevated);
+    border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .attendance-main-title {
+    color: var(--color-text-primary);
+}
+
+:root[data-theme="dark"] .attendance-subtitle {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .attendance-body {
+    background-color: var(--color-surface);
+}
+
+:root[data-theme="dark"] .attendance-desc {
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .attendance-footer {
+    border-color: var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .attendant-badge {
+    background-color: var(--color-elevated);
+    color: var(--color-text-secondary);
+}
+
+:root[data-theme="dark"] .value-badge {
+    background-color: rgba(56, 161, 105, 0.15);
+    color: #4ade80;
+}
+
+:root[data-theme="dark"] .refusal-card .attendance-card {
+    background-color: rgba(229, 62, 62, 0.08);
+    border-color: rgba(229, 62, 62, 0.3);
+}

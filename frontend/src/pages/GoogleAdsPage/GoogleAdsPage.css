@@ -1,0 +1,1283 @@
+.google-ads-page-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--color-background);
+  min-height: 100%;
+}
+
+.google-ads-page-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.google-ads-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--spacing-lg);
+  margin: -1.5rem -1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.google-ads-page-header__eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.google-ads-page-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: var(--color-text-primary);
+}
+
+.google-ads-page-header p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.google-ads-page-header__note {
+  min-width: 260px;
+  padding: 0;
+  color: var(--color-text-secondary);
+  text-align: right;
+}
+
+.google-ads-page-header__note-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.google-ads-page-header__note-pill strong {
+  color: var(--color-primary);
+  margin-right: 0.3rem;
+}
+
+.google-ads-toolbar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  margin: 0 -1.5rem;
+}
+
+.google-ads-toolbar__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.google-ads-toolbar__field span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.google-ads-toolbar__field select,
+.google-ads-toolbar__field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.78rem 0.9rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #fff;
+  color: #0f172a;
+}
+
+.google-ads-toolbar__actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.google-ads-toolbar__button {
+  min-height: 46px;
+  padding: 0.85rem 1.2rem;
+  border: 0;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.google-ads-toolbar__button--primary {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.google-ads-toolbar__button--secondary {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.google-ads-toolbar__button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.google-ads-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.google-ads-summary-card,
+.google-ads-account-card,
+.google-ads-empty-state,
+.google-ads-campaigns-section,
+.google-ads-accounts-section {
+  min-width: 0;
+  max-width: 100%;
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+}
+
+.google-ads-summary-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-ads-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.google-ads-summary-card__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.google-ads-summary-card__content>div:first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.google-ads-summary-card__label {
+  display: block;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.google-ads-summary-card__value {
+  display: block;
+  margin-top: 10px;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.google-ads-summary-card__helper {
+  display: block;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.google-ads-summary-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: var(--color-elevated);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.google-ads-summary-card__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), rgba(197, 210, 0, 0));
+}
+
+.google-ads-accounts-section,
+.google-ads-campaigns-section,
+.google-ads-empty-state {
+  padding: 1.25rem;
+}
+
+.google-ads-empty-state h2,
+.google-ads-section-heading h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.google-ads-empty-state p,
+.google-ads-section-heading p {
+  margin: 0.45rem 0 0;
+  color: #475569;
+}
+
+.google-ads-empty-state--compact {
+  padding: 1rem;
+}
+
+.google-ads-screen-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 280px;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+}
+
+.google-ads-screen-loading__spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(10, 122, 255, 0.18);
+  border-top-color: var(--color-primary);
+  border-radius: 999px;
+  animation: google-ads-screen-spin 0.8s linear infinite;
+}
+
+.google-ads-screen-loading__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.google-ads-screen-loading__text strong {
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.google-ads-screen-loading__text span {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+.google-ads-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.google-ads-section-heading__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.google-ads-section-heading__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.google-ads-export-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 36px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.google-ads-export-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.google-ads-export-button:not(:disabled):hover {
+  border-color: color-mix(in srgb, var(--color-primary) 34%, rgba(148, 163, 184, 0.24));
+  background: color-mix(in srgb, var(--color-primary) 10%, white);
+}
+
+.google-ads-campaign-details-title {
+  margin: 0;
+  scroll-margin-top: 1rem;
+  color: var(--color-text-primary);
+}
+
+.google-ads-detail-tabs {
+  margin-top: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.google-ads-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: var(--color-elevated);
+  border: 1px solid var(--color-border);
+}
+
+.google-ads-view-toggle__button {
+  min-height: 34px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.google-ads-view-toggle__button--active {
+  background: var(--color-primary);
+  color: #253000;
+}
+
+@keyframes google-ads-screen-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.google-ads-campaign-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.google-ads-campaign-card {
+  display: grid;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-ads-campaign-card:hover {
+  border-color: rgba(191, 208, 0, 0.32);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(191, 208, 0, 0.14),
+    0 0 0 4px rgba(197, 210, 0, 0.08);
+}
+
+.google-ads-campaign-card--active {
+  border-color: color-mix(in srgb, var(--color-primary) 56%, var(--color-border));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary) 32%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 8%, white), var(--color-surface));
+}
+
+.google-ads-campaign-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.google-ads-campaign-card__title {
+  display: grid;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.google-ads-campaign-card__title-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+}
+
+.google-ads-campaign-card__title strong {
+  color: var(--color-text-primary);
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.google-ads-campaign-card__title span,
+.google-ads-campaign-card__meta span,
+.google-ads-campaign-card__grid span {
+  color: var(--color-text-secondary);
+}
+
+.google-ads-campaign-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.82rem;
+
+}
+
+.google-ads-campaign-card__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.google-ads-campaign-card__grid div {
+  display: grid;
+  gap: 0.22rem;
+  min-width: 0;
+}
+
+.google-ads-campaign-card__grid span {
+  font-size: 0.78rem;
+}
+
+.google-ads-campaign-card__grid strong {
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.google-ads-subfilter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.google-ads-subfilter-row--compact {
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+}
+
+.google-ads-subfilter-chip {
+  min-height: 34px;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.google-ads-subfilter-chip--active {
+  border-color: color-mix(in srgb, var(--color-primary) 52%, var(--color-border));
+  background: color-mix(in srgb, var(--color-primary) 14%, white);
+  color: #253000;
+}
+
+.google-ads-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.56);
+  backdrop-filter: blur(6px);
+}
+
+.google-ads-modal__dialog {
+  width: min(1400px, 100%);
+  max-height: min(88vh, 920px);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 32px 72px rgba(15, 23, 42, 0.24);
+  overflow: hidden;
+}
+
+.google-ads-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.google-ads-modal__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.google-ads-modal__eyebrow {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.google-ads-modal__header h2 {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.google-ads-modal__description {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.google-ads-modal__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.google-ads-modal__close:hover {
+  background: color-mix(in srgb, var(--color-primary) 10%, white);
+  color: var(--color-text-primary);
+}
+
+.google-ads-modal__body {
+  min-height: 0;
+  overflow: auto;
+}
+
+.google-ads-modal__table-wrap {
+  padding-bottom: 0;
+}
+
+.google-ads-account-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.google-ads-account-card {
+  padding: 1.1rem;
+}
+
+.google-ads-account-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.google-ads-account-card__header h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.google-ads-account-card__header p {
+  margin: 0.35rem 0 0;
+  color: #64748b;
+}
+
+.google-ads-account-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 1rem;
+  color: #334155;
+}
+
+.google-ads-account-card__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.google-ads-page-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.34rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.google-ads-page-status--success {
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
+}
+
+.google-ads-page-status--warning {
+  background: rgba(245, 158, 11, 0.14);
+  color: #92400e;
+}
+
+.google-ads-page-status--neutral {
+  background: rgba(148, 163, 184, 0.14);
+  color: #334155;
+}
+
+.google-ads-table-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.4rem;
+  scrollbar-gutter: stable both-edges;
+  -webkit-overflow-scrolling: touch;
+}
+
+.google-ads-table-wrap::-webkit-scrollbar {
+  height: 12px;
+}
+
+.google-ads-table-wrap::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.16);
+  border-radius: 999px;
+}
+
+.google-ads-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.45);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.google-ads-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  min-width: 1220px;
+}
+
+.google-ads-table-wrap--adgroups {
+  overflow-x: hidden;
+}
+
+.google-ads-table--adgroups {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.google-ads-table--adgroups thead th,
+.google-ads-table--adgroups tbody td {
+  padding: 0.8rem 0.65rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.google-ads-table--adgroups th:nth-child(1),
+.google-ads-table--adgroups td:nth-child(1) {
+  width: 11%;
+}
+
+.google-ads-table--adgroups th:nth-child(2),
+.google-ads-table--adgroups td:nth-child(2) {
+  width: 20%;
+}
+
+.google-ads-table--adgroups th:nth-child(3),
+.google-ads-table--adgroups td:nth-child(3) {
+  width: 10%;
+}
+
+.google-ads-table--adgroups th:nth-child(4),
+.google-ads-table--adgroups td:nth-child(4) {
+  width: 9%;
+}
+
+.google-ads-table--adgroups th:nth-child(5),
+.google-ads-table--adgroups td:nth-child(5) {
+  width: 6%;
+}
+
+.google-ads-table--adgroups th:nth-child(6),
+.google-ads-table--adgroups td:nth-child(6) {
+  width: 6%;
+}
+
+.google-ads-table--adgroups th:nth-child(7),
+.google-ads-table--adgroups td:nth-child(7) {
+  width: 5%;
+}
+
+.google-ads-table--adgroups th:nth-child(8),
+.google-ads-table--adgroups td:nth-child(8) {
+  width: 7%;
+}
+
+.google-ads-table--adgroups th:nth-child(9),
+.google-ads-table--adgroups td:nth-child(9) {
+  width: 7%;
+}
+
+.google-ads-table--adgroups th:nth-child(10),
+.google-ads-table--adgroups td:nth-child(10) {
+  width: 6%;
+}
+
+.google-ads-table--adgroups th:nth-child(11),
+.google-ads-table--adgroups td:nth-child(11) {
+  width: 7%;
+}
+
+.google-ads-table--adgroups th:nth-child(12),
+.google-ads-table--adgroups td:nth-child(12) {
+  width: 6%;
+}
+
+.google-ads-table--adgroups .google-ads-table__campaign {
+  min-width: 0;
+}
+
+.google-ads-table--adgroups .google-ads-table__campaign strong,
+.google-ads-table--adgroups .google-ads-table__campaign span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.google-ads-table--adgroups .google-ads-table__trigger {
+  white-space: normal;
+}
+
+.google-ads-table--adgroups .google-ads-page-status {
+  white-space: normal;
+  text-align: center;
+}
+
+.google-ads-table-wrap--campaign-adgroups {
+  overflow-x: hidden;
+}
+
+.google-ads-table--campaign-adgroups {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.google-ads-table--campaign-adgroups thead th,
+.google-ads-table--campaign-adgroups tbody td {
+  padding: 0.8rem 0.65rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(1),
+.google-ads-table--campaign-adgroups td:nth-child(1) {
+  width: 19%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(2),
+.google-ads-table--campaign-adgroups td:nth-child(2) {
+  width: 19%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(3),
+.google-ads-table--campaign-adgroups td:nth-child(3) {
+  width: 9%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(4),
+.google-ads-table--campaign-adgroups td:nth-child(4) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(5),
+.google-ads-table--campaign-adgroups td:nth-child(5) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(6),
+.google-ads-table--campaign-adgroups td:nth-child(6) {
+  width: 6%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(7),
+.google-ads-table--campaign-adgroups td:nth-child(7) {
+  width: 5%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(8),
+.google-ads-table--campaign-adgroups td:nth-child(8) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(9),
+.google-ads-table--campaign-adgroups td:nth-child(9) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(10),
+.google-ads-table--campaign-adgroups td:nth-child(10) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups th:nth-child(11),
+.google-ads-table--campaign-adgroups td:nth-child(11) {
+  width: 7%;
+}
+
+.google-ads-table--campaign-adgroups .google-ads-table__campaign {
+  min-width: 0;
+}
+
+.google-ads-table--campaign-adgroups .google-ads-table__campaign strong,
+.google-ads-table--campaign-adgroups .google-ads-table__campaign span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.google-ads-table--campaign-adgroups .google-ads-page-status {
+  white-space: normal;
+  text-align: center;
+}
+
+.google-ads-table thead th {
+  padding: 0.9rem 0.8rem;
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.google-ads-table tbody td {
+  padding: 0.95rem 0.8rem;
+  color: #334155;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  vertical-align: top;
+}
+
+.google-ads-table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.google-ads-table--adgroups .google-ads-table__row--interactive,
+.google-ads-table--campaign-adgroups .google-ads-table__row--interactive {
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-ads-table--adgroups .google-ads-table__row--interactive:hover,
+.google-ads-table--campaign-adgroups .google-ads-table__row--interactive:hover {
+  background: color-mix(in srgb, var(--color-primary) 10%, white);
+}
+
+.google-ads-table--adgroups .google-ads-table__row--interactive:focus-visible,
+.google-ads-table--campaign-adgroups .google-ads-table__row--interactive:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-primary) 58%, transparent);
+  outline-offset: -2px;
+}
+
+.google-ads-table--adgroups .google-ads-table__row--active,
+.google-ads-table--campaign-adgroups .google-ads-table__row--active {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 8%, white), var(--color-surface));
+  box-shadow: inset 4px 0 0 color-mix(in srgb, var(--color-primary) 78%, transparent);
+}
+
+.google-ads-table--adgroups .google-ads-table__row--active .google-ads-table__campaign strong,
+.google-ads-table--campaign-adgroups .google-ads-table__row--active .google-ads-table__campaign strong {
+  color: color-mix(in srgb, var(--color-primary) 18%, var(--color-text-primary));
+}
+
+.google-ads-table__campaign {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.google-ads-table__campaign strong {
+  color: #0f172a;
+}
+
+.google-ads-table__campaign span {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.google-ads-table__trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+}
+
+.google-ads-table__trigger:hover .google-ads-table__campaign strong {
+  color: #1d4ed8;
+}
+
+.google-ads-table__trigger--active {
+  background: rgba(37, 99, 235, 0.08);
+  padding: 0.45rem 0.55rem;
+}
+
+@media (max-width: 1200px) {
+  .google-ads-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .google-ads-account-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .google-ads-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .google-ads-campaign-card-grid,
+  .google-ads-campaign-card__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .google-ads-table--adgroups thead th,
+  .google-ads-table--adgroups tbody td,
+  .google-ads-table--campaign-adgroups thead th,
+  .google-ads-table--campaign-adgroups tbody td {
+    padding: 0.72rem 0.5rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .google-ads-page-layout {
+    padding: 1rem;
+  }
+
+  .google-ads-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: -1rem -1rem 0;
+  }
+
+  .google-ads-page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .google-ads-page-header__note {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .google-ads-toolbar,
+  .google-ads-summary-grid,
+  .google-ads-account-grid,
+  .google-ads-account-card__metrics,
+  .google-ads-campaign-card-grid,
+  .google-ads-campaign-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .google-ads-section-heading,
+  .google-ads-account-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .google-ads-section-heading__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .google-ads-view-toggle {
+    width: 100%;
+  }
+
+  .google-ads-view-toggle__button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .google-ads-campaign-card__header {
+    flex-direction: column;
+  }
+
+  .google-ads-modal {
+    padding: 0.75rem;
+  }
+
+  .google-ads-modal__dialog {
+    max-height: 92vh;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .google-ads-modal__header {
+    flex-direction: column;
+  }
+
+  .google-ads-modal__close {
+    align-self: flex-end;
+  }
+}
+
+:root[data-theme="dark"] .google-ads-toolbar,
+:root[data-theme="dark"] .google-ads-summary-card,
+:root[data-theme="dark"] .google-ads-campaign-card,
+:root[data-theme="dark"] .google-ads-account-card,
+:root[data-theme="dark"] .google-ads-screen-loading,
+:root[data-theme="dark"] .google-ads-empty-state,
+:root[data-theme="dark"] .google-ads-campaigns-section,
+:root[data-theme="dark"] .google-ads-accounts-section {
+  background: rgba(15, 23, 42, 0.88);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 36px rgba(2, 6, 23, 0.28);
+}
+
+:root[data-theme="dark"] .google-ads-summary-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .google-ads-summary-card:hover {
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .google-ads-summary-card__icon {
+  background: var(--color-elevated);
+  color: #d7e85c;
+}
+
+:root[data-theme="dark"] .google-ads-summary-card__bar {
+  background: linear-gradient(90deg, #d7e85c, rgba(215, 232, 92, 0));
+}
+
+:root[data-theme="dark"] .google-ads-view-toggle {
+  background: var(--color-elevated);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .google-ads-view-toggle__button--active {
+  background: var(--color-primary);
+  color: #253000;
+}
+
+:root[data-theme="dark"] .google-ads-campaign-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .google-ads-campaign-card:hover {
+  border-color: rgba(197, 210, 0, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(197, 210, 0, 0.2),
+    0 0 0 4px rgba(197, 210, 0, 0.08),
+    0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme="dark"] .google-ads-campaign-card--active {
+  border-color: rgba(197, 210, 0, 0.42);
+  box-shadow: 0 0 0 1px rgba(197, 210, 0, 0.16);
+  background:
+    linear-gradient(180deg, rgba(197, 210, 0, 0.08), var(--color-surface));
+}
+
+:root[data-theme="dark"] .google-ads-page-header {
+  background: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .google-ads-page-header h1,
+:root[data-theme="dark"] .google-ads-campaign-details-title,
+:root[data-theme="dark"] .google-ads-screen-loading__text strong,
+:root[data-theme="dark"] .google-ads-empty-state h2,
+:root[data-theme="dark"] .google-ads-section-heading h2,
+:root[data-theme="dark"] .google-ads-summary-card__value,
+:root[data-theme="dark"] .google-ads-account-card__header h3,
+:root[data-theme="dark"] .google-ads-table__campaign strong {
+  color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .google-ads-page-header p,
+:root[data-theme="dark"] .google-ads-empty-state p,
+:root[data-theme="dark"] .google-ads-section-heading p,
+:root[data-theme="dark"] .google-ads-screen-loading__text span,
+:root[data-theme="dark"] .google-ads-summary-card__helper,
+:root[data-theme="dark"] .google-ads-campaign-card__title span,
+:root[data-theme="dark"] .google-ads-campaign-card__meta span,
+:root[data-theme="dark"] .google-ads-campaign-card__grid span,
+:root[data-theme="dark"] .google-ads-account-card__header p,
+:root[data-theme="dark"] .google-ads-account-card__footer,
+:root[data-theme="dark"] .google-ads-table tbody td,
+:root[data-theme="dark"] .google-ads-table__campaign span {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .google-ads-toolbar__field span,
+:root[data-theme="dark"] .google-ads-summary-card__label,
+:root[data-theme="dark"] .google-ads-subfilter-chip,
+:root[data-theme="dark"] .google-ads-table thead th {
+  color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .google-ads-subfilter-chip {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+:root[data-theme="dark"] .google-ads-export-button {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.22);
+  color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .google-ads-export-button:not(:disabled):hover {
+  background: rgba(197, 210, 0, 0.14);
+  border-color: rgba(197, 210, 0, 0.34);
+  color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .google-ads-subfilter-chip--active {
+  background: rgba(197, 210, 0, 0.14);
+  border-color: rgba(197, 210, 0, 0.34);
+  color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .google-ads-modal {
+  background: rgba(2, 6, 23, 0.72);
+}
+
+:root[data-theme="dark"] .google-ads-modal__dialog {
+  background: rgba(15, 23, 42, 0.98);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 32px 72px rgba(2, 6, 23, 0.54);
+}
+
+:root[data-theme="dark"] .google-ads-modal__header {
+  border-bottom-color: rgba(51, 65, 85, 0.9);
+}
+
+:root[data-theme="dark"] .google-ads-modal__header h2 {
+  color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .google-ads-modal__description {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .google-ads-modal__close {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.22);
+  color: #cbd5e1;
+}
+
+:root[data-theme="dark"] .google-ads-modal__close:hover {
+  background: rgba(197, 210, 0, 0.14);
+  color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .google-ads-toolbar__field select,
+:root[data-theme="dark"] .google-ads-toolbar__field input {
+  background: rgba(15, 23, 42, 0.72);
+  color: #e2e8f0;
+  border-color: rgba(148, 163, 184, 0.26);
+}
+
+:root[data-theme="dark"] .google-ads-table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+:root[data-theme="dark"] .google-ads-table--adgroups .google-ads-table__row--interactive:hover,
+:root[data-theme="dark"] .google-ads-table--campaign-adgroups .google-ads-table__row--interactive:hover {
+  background: color-mix(in srgb, var(--color-primary) 14%, rgba(15, 23, 42, 0.92));
+}
+
+:root[data-theme="dark"] .google-ads-table--adgroups .google-ads-table__row--active,
+:root[data-theme="dark"] .google-ads-table--campaign-adgroups .google-ads-table__row--active {
+  background: color-mix(in srgb, var(--color-primary) 16%, rgba(15, 23, 42, 0.96));
+  box-shadow: inset 4px 0 0 color-mix(in srgb, var(--color-primary) 74%, transparent);
+}
+
+:root[data-theme="dark"] .google-ads-table--adgroups .google-ads-table__row--active .google-ads-table__campaign strong,
+:root[data-theme="dark"] .google-ads-table--campaign-adgroups .google-ads-table__row--active .google-ads-table__campaign strong {
+  color: var(--color-primary);
+}
+
+:root[data-theme="dark"] .google-ads-table__trigger:hover .google-ads-table__campaign strong {
+  color: #93c5fd;
+}
+
+:root[data-theme="dark"] .google-ads-table__trigger--active {
+  background: rgba(59, 130, 246, 0.14);
+}
+
+:root[data-theme="dark"] .google-ads-table-wrap::-webkit-scrollbar-track {
+  background: rgba(51, 65, 85, 0.9);
+}
+
+:root[data-theme="dark"] .google-ads-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.55);
+  border-color: transparent;
+}
+
+:root[data-theme="dark"] .google-ads-screen-loading__spinner {
+  border-color: rgba(96, 165, 250, 0.18);
+  border-top-color: var(--color-primary);
+}
